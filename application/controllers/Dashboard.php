@@ -18,7 +18,7 @@ class Dashboard extends MY_Controller
 	*/
 	public function index()
 	{
-		$this->data['showtitle'] = 'Agende';
+		$this->data['showtitle'] = 'Agendamentos';
 		$this->data['title'] = setting('name');
 
 		$this->data['body'] = '';

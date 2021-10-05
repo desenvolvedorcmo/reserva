@@ -24,12 +24,12 @@ $menu[$i]['href'] = '';
 // Menu items for Administrators
 
 $i = 0;
-$school[$i]['text'] = 'School Details';
+$school[$i]['text'] = 'Cadastro Órgão';
 $school[$i]['icon'] = 'school_manage_details.png';
 $school[$i]['href'] = site_url('school');
 
 $i++;
-$school[$i]['text'] = 'The School Day';
+$school[$i]['text'] = 'Períodos de Agendamento';
 $school[$i]['icon'] = 'school_manage_times.png';
 $school[$i]['href'] = site_url('periods');
 
