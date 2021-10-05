@@ -24,7 +24,7 @@ class Holidays extends MY_Controller
 	{
 		$this->data['holidays'] = $this->holidays_model->Get();
 
-		$this->data['title'] = 'School Holidays';
+		$this->data['title'] = 'Feriados';
 		$this->data['showtitle'] = $this->data['title'];
 		$this->data['body'] = $this->load->view('holidays/holidays_index', $this->data, TRUE);
 		return $this->render();
@@ -39,7 +39,7 @@ class Holidays extends MY_Controller
 	 */
 	function add()
 	{
-		$this->data['title'] = 'Add Holiday';
+		$this->data['title'] = 'Adicionar feriado';
 		$this->data['showtitle'] = $this->data['title'];
 
 		$columns = array(
@@ -74,7 +74,7 @@ class Holidays extends MY_Controller
 		}
 
 		// Load view
-		$this->data['title'] = 'Edit Holiday';
+		$this->data['title'] = 'Editar feriado';
 		$this->data['showtitle'] = $this->data['title'];
 
 		$columns = array(
@@ -175,7 +175,7 @@ class Holidays extends MY_Controller
 		$this->data['cancel'] = 'holidays';
 
 		$row = $this->holidays_model->Get($id);
-		$this->data['title'] = 'Delete Holiday (' . html_escape($row->name) . ')';
+		$this->data['title'] = 'Deletar Feriado (' . html_escape($row->name) . ')';
 		$this->data['showtitle'] = $this->data['title'];
 		$this->data['body'] = $this->load->view('partials/deleteconfirm', $this->data, TRUE);
 		return $this->render();

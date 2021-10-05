@@ -3,7 +3,7 @@
 echo $this->session->flashdata('saved');
 
 $iconbar = iconbar(array(
-	array('periods/add', 'Add Period', 'add.png'),
+	array('periods/add', 'Adicionar período', 'add.png'),
 ));
 
 echo $iconbar;
@@ -17,11 +17,11 @@ $sort_cols = ["None", "Name", "TimeStart", "TimeEnd", "Duration", "Days", "None"
 	<thead>
 	<tr class="heading">
 		<td class="h" title="N">&nbsp;</td>
-		<td class="h" title="Name">Name</td>
-		<td class="h" title="TimeStart">Start time</td>
-		<td class="h" title="TimeEnd">End Time</td>
-		<td class="h" title="Duration">Duration</td>
-		<td class="h" title="Days">Days of week</td>
+		<td class="h" title="Name">Nome</td>
+		<td class="h" title="TimeStart">Início</td>
+		<td class="h" title="TimeEnd">Término</td>
+		<td class="h" title="Duration">Duração</td>
+		<td class="h" title="Days">Dias da semana</td>
 		<td class="n" title="X"></td>
 	</tr>
 	</thead>

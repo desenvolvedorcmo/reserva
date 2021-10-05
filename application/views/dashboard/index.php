@@ -39,7 +39,7 @@ $school[$i]['icon'] = 'school_manage_weeks.png';
 $school[$i]['href'] = site_url('weeks');
 
 $i++;
-$school[$i]['text'] = 'Holidays';
+$school[$i]['text'] = 'Feriados';
 $school[$i]['icon'] = 'school_manage_holidays.png';
 $school[$i]['href'] = site_url('holidays');
 

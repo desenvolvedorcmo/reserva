@@ -9,10 +9,10 @@ echo form_open('holidays/save', array('class' => 'cssform', 'id' => 'holiday_add
 
 <fieldset>
 
-	<legend accesskey="H" tabindex="<?= tab_index() ?>">Holiday Information</legend>
+	<legend accesskey="H" tabindex="<?= tab_index() ?>">informações do feriado</legend>
 
 	<p>
-		<label for="name" class="required">Name</label>
+		<label for="name" class="required">Nome</label>
 		<?php
 		$field = 'name';
 		$value = set_value($field, isset($holiday) ? $holiday->name : '', FALSE);
@@ -29,7 +29,7 @@ echo form_open('holidays/save', array('class' => 'cssform', 'id' => 'holiday_add
 	<?php echo form_error($field) ?>
 
 	<p>
-		<label for="date_start" class="required">Start Date</label>
+		<label for="date_start" class="required">Data de início</label>
 		<?php
 		$field = 'date_start';
 		$default = (isset($holiday)
@@ -52,7 +52,7 @@ echo form_open('holidays/save', array('class' => 'cssform', 'id' => 'holiday_add
 
 
 	<p>
-		<label for="date_start" class="required">End Date</label>
+		<label for="date_start" class="required">Data de término</label>
 		<?php
 		$field = 'date_end';
 		$default = (isset($holiday)
@@ -79,8 +79,8 @@ echo form_open('holidays/save', array('class' => 'cssform', 'id' => 'holiday_add
 <?php
 
 $this->load->view('partials/submit', array(
-	'submit' => array('Save', tab_index()),
-	'cancel' => array('Cancel', tab_index(), 'holidays'),
+	'submit' => array('Salvar', tab_index()),
+	'cancel' => array('Cancelar', tab_index(), 'holidays'),
 ));
 
 echo form_close();

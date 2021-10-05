@@ -3,7 +3,7 @@
 echo $this->session->flashdata('saved');
 
 $iconbar = iconbar(array(
-	array('holidays/add', 'Add Holiday', 'add.png'),
+	array('holidays/add', 'Adicionar feriado', 'add.png'),
 ));
 
 echo $iconbar;
@@ -16,10 +16,10 @@ $sort_cols = ["Name", "StartDate", "EndDate", "None"];
 	<col /><col /><col /><col />
 	<thead>
 	<tr class="heading">
-		<td class="h" title="Name">Name</td>
-		<td class="h" title="StartDate">Start Date</td>
-		<td class="h" title="EndDate">End Date</td>
-		<td class="h" title="Duration">Duration</td>
+		<td class="h" title="Name">Nome</td>
+		<td class="h" title="StartDate">Início</td>
+		<td class="h" title="EndDate">Término</td>
+		<td class="h" title="Duration">Duração</td>
 		<td class="n" title="X"></td>
 	</tr>
 	</thead>
@@ -49,7 +49,7 @@ $sort_cols = ["Name", "StartDate", "EndDate", "None"];
 	</tr>
 	<?php $i++; }
 	} else {
-		echo '<td colspan="4" align="center" style="padding:16px 0">No holidays defined!</td>';
+		echo '<td colspan="4" align="center" style="padding:16px 0">Sem feriados definidos!</td>';
 	}
 	?>
 	</tbody>

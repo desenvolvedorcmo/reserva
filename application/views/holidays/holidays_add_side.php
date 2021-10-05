@@ -1,6 +1,6 @@
 <dl>
-  <dt>School Holidays</dt>
-  <dd>The dates should be the first and last dates of the <span>holiday</span> itself, do not include the teaching days.</dd>
-  <dt>Date format</dt>
-  <dd>Use the <span>DD/MM/YYYY</span> format when entering dates, for example <strong>16/04/2018</strong></dd>
+  <dt>Feriados</dt>
+  <dd>As datas devem ser a primeira e a última data do <span>feriado</span> em si, não inclui os dias de ensino.</dd>
+  <dt>Formato de data</dt>
+  <dd>Use o formato <span>DD/MM/AAAA</span> ao inserir datas, por exemplo <strong>16/04/2018</strong></dd>
 </dl>

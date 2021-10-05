@@ -1,12 +1,12 @@
 <?php
 
 if ($this->userauth->logged_in()) {
-	$menu[1]['text'] = img('assets/images/ui/link_controlpanel.png', FALSE, 'hspace="4" align="top" alt=" "') . 'Control Panel';
+	$menu[1]['text'] = img('assets/images/ui/link_controlpanel.png', FALSE, 'hspace="4" align="top" alt=" "') . 'Painel de controle';
 	$menu[1]['href'] = site_url('/');
 	$menu[1]['title'] = 'Tasks';
 
 	if($this->userauth->is_level(ADMINISTRATOR)){ $icon = 'user_administrator.png'; } else { $icon = 'user_teacher.png'; }
-	$menu[3]['text'] = img('assets/images/ui/logout.png', FALSE, 'hspace="4" align="top" alt=" "') . 'Logout';
+	$menu[3]['text'] = img('assets/images/ui/logout.png', FALSE, 'hspace="4" align="top" alt=" "') . 'Sair';
 	$menu[3]['href'] = site_url('logout');
 	$menu[3]['title'] = 'Log out of classroombookings';
 }
@@ -72,8 +72,8 @@ if ($this->userauth->logged_in()) {
 				?><br />
 				<?php
 				if ($this->userauth->logged_in()) {
-					$output = html_escape(strlen($this->userauth->user->displayname) > 1 ? $this->userauth->user->displayname : $this->userauth->user->username);
-					echo "<p class='normal'>Logged in as {$output}</p>";
+					$output = html_escape(strlen($this->userauth->user->cdisplayname) > 1 ? $this->userauth->user->displayname : $this->userauth->user->username);
+					echo "<p class='normal'>Logado como {$output}</p>";
 				}
 				?>
 			</div>

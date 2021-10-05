@@ -92,7 +92,7 @@ class Periods extends MY_Controller
 			),
 		);
 
-		$this->data['title'] = 'Edit Period';
+		$this->data['title'] = 'Editar período';
 		$this->data['showtitle'] = $this->data['title'];
 		$this->data['body'] = $this->load->view('columns', $columns, TRUE);
 		return $this->render();
@@ -143,11 +143,11 @@ class Periods extends MY_Controller
 		if (empty($period_id)) {
 			// No ID, adding new record
 			$period_id = $this->periods_model->Add($period_data);
-			$this->session->set_flashdata('saved', msgbox('info', "{$period_data['name']} has been added."));
+			$this->session->set_flashdata('saved', msgbox('info', "{$period_data['name']} Período foi adicionado."));
 		} else {
 			// We have an ID, updating existing record
 			$this->periods_model->Edit($period_id, $period_data);
-			$this->session->set_flashdata('saved', msgbox('info', "{$period_data['name']} has been modified."));
+			$this->session->set_flashdata('saved', msgbox('info', "{$period_data['name']} foi modificado."));
 		}
 
 		redirect('periods');
@@ -166,21 +166,21 @@ class Periods extends MY_Controller
 			// Form has been submitted (so the POST value exists)
 			// Call model function to delete manufacturer
 			$this->periods_model->Delete($this->input->post('id'));
-			$this->session->set_flashdata('saved', msgbox('info', "The period has been deleted."));
+			$this->session->set_flashdata('saved', msgbox('info', "O período foi excluído."));
 			return redirect('periods');
 		}
 
 		if (empty($id)){
-			show_error("No period ID provided.");
+			show_error("Nenhum ID de período fornecido.");
 		}
 
 		// Initialise page
 		$this->data['action'] = 'periods/delete';
 		$this->data['id'] = $id;
 		$this->data['cancel'] = 'periods';
-		$this->data['text'] = 'If you delete this period, any bookings for this period in <strong>all</strong> rooms will be <strong>permenantly deleted</strong>.';
+		$this->data['text'] = 'Se você excluir este período, <strong>todas</strong> as reservas para este período em todos os quartos serão <strong>permanentemente excluídas<strong>.';
 		$row = $this->periods_model->Get($id);
-		$this->data['title'] = 'Delete Period (' . html_escape($row->name) . ')';
+		$this->data['title'] = 'Deletar período (' . html_escape($row->name) . ')';
 		$this->data['showtitle'] = $this->data['title'];
 		$this->data['body'] = $this->load->view('partials/deleteconfirm', $this->data, TRUE);
 		return $this->render();
@@ -208,7 +208,7 @@ class Periods extends MY_Controller
 		if ( ($times['data'] >= $times['am'] && $times['data'] <= $times['pm']) || !isset($times['data'])) {
 			$ret = true;
 		} else {
-			$this->form_validation->set_message('_is_valid_time', 'You entered an invalid time. It must be between 00:00 and 23:59.');
+			$this->form_validation->set_message('_is_valid_time', 'Você inseriu um horário inválido. Deve ser entre 00:00 e 23:59.');
 			$ret = false;
 		}
 
@@ -233,7 +233,7 @@ class Periods extends MY_Controller
 		if( $end >= $start ){
 			$ret = true;
 		} else {
-			$this->form_validation->set_message('_is_after', 'The end time must be equal to or greater than the start time of '.$this->_fix_time( $this->input->post( 'time_start' ) ).'.' );
+			$this->form_validation->set_message('_is_after', 'A hora de término deve ser igual ou maior que a hora de início de '.$this->_fix_time( $this->input->post( 'time_start' ) ).'.' );
 			$ret = false;
 		}
 		return $ret;
