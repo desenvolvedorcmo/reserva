@@ -14,7 +14,7 @@ return array(
 		'dsn' => '',
 		'hostname' => 'localhost',
 		'username' => 'root',
-		'password' => '123',
+		'password' => '123456',
 		'database' => 'reserva',
 		'dbdriver' => 'pdo',
 		'subdriver' => 'mysql',
