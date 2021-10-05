@@ -205,7 +205,7 @@ class Bookings_model extends CI_Model
 			//
 			 if ($this->userauth->is_level(ADMINISTRATOR)) {
 				$edit_url = site_url('bookings/edit/'.$booking->booking_id);
-				$actions[] = "<a class='booking-action' href='{$edit_url}' title='Edit this booking'>edit</a>";
+				$actions[] = "<a class='booking-action' href='{$edit_url}' title='Editar agendamento'>Editar</a>";
 			}
 
 			// 'Cancel' action if user is an Admin, Room owner, or Booking owner
@@ -215,9 +215,9 @@ class Bookings_model extends CI_Model
 				OR ($user_id == $booking->user_id)
 				OR ( ($user_id == $rooms[$room_id]->user_id) && ($booking->date != NULL) )
 			) {
-				$cancel_msg = 'Are you sure you want to cancel this booking?';
+				$cancel_msg = 'Confirmar cancelamento do agendamento?';
 				if ($user_id != $booking->user_id){
-					$cancel_msg = 'Are you sure you want to cancel this booking?\n\n(**) Please take caution, it is not your own.';
+					$cancel_msg = 'Confirmar cancelamento do agendamento?\n\n(**) Atenção, esse não é um agendamento seu.';
 				}
 				$cancel_url = site_url('bookings/cancel/'.$booking->booking_id);
 
@@ -227,7 +227,7 @@ class Bookings_model extends CI_Model
 					name='cancel'
 					value='{$booking->booking_id}'
 					onclick='if(!confirm(\"{$cancel_msg}\")) return false'
-				>cancel</button>";
+				>Cancelar</button>";
 			}
 
 			if ( ! empty($actions)) {
@@ -251,7 +251,7 @@ class Bookings_model extends CI_Model
 			{
 				$book_url = site_url($url);
 				$cell['class'] = 'free';
-				$cell['body'] = '<a href="'.$book_url.'"><img src="' . base_url('assets/images/ui/accept.png') . '" width="16" height="16" alt="Book" title="Book" hspace="4" align="absmiddle" />Book</a>';
+				$cell['body'] = '<a href="'.$book_url.'"><img src="' . base_url('assets/images/ui/accept.png') . '" width="16" height="16" alt="Book" title="Book" hspace="4" align="absmiddle" />Reservar</a>';
 				if ($booking_status->is_admin)
 				{
 					$cell['body'] .= '<input type="checkbox" name="recurring[]" value="'.$url.'" />';
@@ -421,21 +421,21 @@ class Bookings_model extends CI_Model
 
 			case 'day':
 
-				$week_bar['back_text'] = '&larr; Back';
+				$week_bar['back_text'] = '&larr; Voltar';
 				$week_bar['back_date'] = $this->get_nav_date($date_ymd, 'previous');
 				$week_bar['back_link'] = 'bookings?' . http_build_query(array(
 					'date' => $week_bar['back_date'],
 					'direction' => 'back',
 				));
 
-				$week_bar['next_text'] = 'Next &rarr; ';
+				$week_bar['next_text'] = 'Próximo &rarr; ';
 				$week_bar['next_date'] = $this->get_nav_date($date_ymd, 'next');
 				$week_bar['next_link'] = 'bookings?' . http_build_query(array(
 					'date' => $week_bar['next_date'],
 					'direction' => 'next',
 				));
 
-				$week_bar['longdate'] = date(setting('date_format_long'), $date);
+				$week_bar['longdate'] = date('d/m/Y', $date);//date(setting('date_format_long'), $date);
 
 			break;
 		}
@@ -456,6 +456,7 @@ class Bookings_model extends CI_Model
 					$this_date = strtotime("+1 day", $this_date);
 				}
 
+				
 				$week_bar['longdate'] = 'Week commencing '.date(setting('date_format_long'), strtotime($this_week->date));
 			}
 
@@ -543,7 +544,7 @@ class Bookings_model extends CI_Model
 			// The date selected IS in a holiday - give them a nice message saying so.
 			$holiday = $holiday_dates[ $date_ymd ][0];
 			$msg = sprintf(
-				'The date you selected is during a holiday priod (%s, %s - %s).',
+				'A data selecionada é um feriado (%s, %s - %s).',
 				$holiday->name,
 				date("d/m/Y", strtotime($holiday->date_start)),
 				date("d/m/Y", strtotime($holiday->date_end))

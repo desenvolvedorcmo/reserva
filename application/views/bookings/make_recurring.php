@@ -1,7 +1,7 @@
 <br />
 <p style="text-align:center">
-	<label for="notes">Notes:</label> <input type="text" name="notes" id="notes" size="20" maxlength="100" value="<?php echo html_escape($this->session->userdata('notes')) ?>" />
-	<label for="user_ud">User:</label>
+	<label for="notes">Motivo da reserva:</label> <input type="text" name="notes" id="notes" size="20" maxlength="100" value="<?php echo html_escape($this->session->userdata('notes')) ?>" />
+	<label for="user_ud">Usuário:</label>
 	<?php
 	$userlist['0'] = '(None)';
 	foreach($users as $user){
