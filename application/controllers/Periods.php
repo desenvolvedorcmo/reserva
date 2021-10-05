@@ -25,7 +25,7 @@ class Periods extends MY_Controller
 		$this->data['periods'] = $this->periods_model->Get();
 		$this->data['days_list'] = $this->periods_model->days;
 
-		$this->data['title'] = 'The School Day';
+		$this->data['title'] = 'Períodos de Agendamento';
 		$this->data['showtitle'] = $this->data['title'];	// . ' ('.$section.')';
 		$this->data['body'] = $this->load->view('periods/periods_index', $this->data, TRUE);
 
@@ -56,7 +56,7 @@ class Periods extends MY_Controller
 			),
 		);
 
-		$this->data['title'] = 'Add Period';
+		$this->data['title'] = 'Adicionar período';
 		$this->data['showtitle'] = $this->data['title'];
 		$this->data['body'] = $this->load->view('columns', $columns, TRUE);
 

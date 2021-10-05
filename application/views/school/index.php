@@ -6,10 +6,10 @@ echo form_open_multipart(current_url(), array('id'=>'schooldetails', 'class'=>'c
 
 <fieldset>
 
-	<legend accesskey="I" tabindex="<?php echo tab_index(); ?>">School Information</legend>
+	<legend accesskey="I" tabindex="<?php echo tab_index(); ?>">Infomações do Órgão</legend>
 
 	<p>
-		<label for="schoolname" class="required">School name</label>
+		<label for="schoolname" class="required">Nome</label>
 		<?php
 		$value = set_value('schoolname', element('name', $settings), FALSE);
 		echo form_input(array(
@@ -25,7 +25,7 @@ echo form_open_multipart(current_url(), array('id'=>'schooldetails', 'class'=>'c
 	<?php echo form_error('schoolname'); ?>
 
 	<p>
-		<label for="website">Website address</label>
+		<label for="website">Website</label>
 		<?php
 		$value = set_value('website', element('website', $settings), FALSE);
 		echo form_input(array(
@@ -46,24 +46,24 @@ echo form_open_multipart(current_url(), array('id'=>'schooldetails', 'class'=>'c
 
 <fieldset>
 
-	<legend accesskey="L" tabindex="<?php echo tab_index() ?>">School Logo</legend>
+	<legend accesskey="L" tabindex="<?php echo tab_index() ?>">Logo</legend>
 
-	<div>Use this section to upload a school logo.</div>
+	<div>Use esta seção para fazer upload de um logotipo.</div>
 
 	<p>
-		<label>Current logo</label>
+		<label>Logo atual</label>
 		<?php
 		$logo = element('logo', $settings);
 		if ( ! empty($logo) && is_file(FCPATH . 'uploads/' . $logo)) {
 			echo img('uploads/' . $logo, FALSE, "style='padding:1px; border:1px solid #ccc; max-width: 300px; width: auto; height: auto'");
 		} else {
-			echo "<span><em>None found</em></span>";
+			echo "<span><em>Nenhum encontrado</em></span>";
 		}
 		?>
 	</p>
 
 	<p>
-		<label for="userfile">File upload</label>
+		<label for="userfile">Upload</label>
 		<?php
 		echo form_upload(array(
 			'name' => 'userfile',
@@ -74,7 +74,7 @@ echo form_open_multipart(current_url(), array('id'=>'schooldetails', 'class'=>'c
 			'value' => '',
 		));
 		?>
-		<p class="hint">Uploading a new logo will <span>overwrite</span> the current one.</p>
+		<p class="hint">Carregar um novo logotipo <span>substituirá</span> o atual.</p>
 	</p>
 
 	<?php
@@ -84,7 +84,7 @@ echo form_open_multipart(current_url(), array('id'=>'schooldetails', 'class'=>'c
 	?>
 
 	<p>
-		<label for="logo_delete">Delete logo?</label>
+		<label for="logo_delete">Remover Logo</label>
 		<?php
 		echo form_checkbox(array(
 			'name' => 'logo_delete',
@@ -94,7 +94,7 @@ echo form_open_multipart(current_url(), array('id'=>'schooldetails', 'class'=>'c
 			'checked' => FALSE,
 		));
 		?>
-		<p class="hint">Tick this box to <span>delete the current logo</span>. If you are uploading a new logo this will be done automatically.</p>
+		<p class="hint">Marque esta caixa para excluir o <span>logotipo</span> atual. Se você estiver enviando um novo logotipo, isso será feito automaticamente.</p>
 	</p>
 
 </fieldset>
@@ -103,8 +103,8 @@ echo form_open_multipart(current_url(), array('id'=>'schooldetails', 'class'=>'c
 <?php
 
 $this->load->view('partials/submit', array(
-	'submit' => array('Save', tab_index()),
-	'cancel' => array('Cancel', tab_index(), 'controlpanel'),
+	'submit' => array('Salvar', tab_index()),
+	'cancel' => array('Cancelar', tab_index(), 'controlpanel'),
 ));
 
 echo form_close();

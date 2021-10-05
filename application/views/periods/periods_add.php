@@ -10,10 +10,10 @@ echo form_open('periods/save', array('class' => 'cssform', 'id' => 'schoolday_ad
 
 <fieldset>
 
-	<legend accesskey="R" tabindex="<?php echo tab_index() ?>">Period details</legend>
+	<legend accesskey="R" tabindex="<?php echo tab_index() ?>">Detalhes</legend>
 
 	<p>
-		<label for="name" class="required">Name</label>
+		<label for="name" class="required">Nome</label>
 		<?php
 		$field = 'name';
 		$value = set_value($field, isset($period) ? $period->name : '', FALSE);
@@ -30,7 +30,7 @@ echo form_open('periods/save', array('class' => 'cssform', 'id' => 'schoolday_ad
 	<?php echo form_error($field); ?>
 
 	<p>
-		<label for="time_start" class="required">Start time</label>
+		<label for="time_start" class="required">Início</label>
 		<?php
 		$field = 'time_start';
 		$value = set_value($field, isset($period) ? $period->time_start : '', FALSE);
@@ -49,7 +49,7 @@ echo form_open('periods/save', array('class' => 'cssform', 'id' => 'schoolday_ad
 
 
 	<p>
-		<label for="time_end" class="required">End time</label>
+		<label for="time_end" class="required">Término</label>
 		<?php
 		$field = 'time_end';
 		$value = set_value($field, isset($period) ? $period->time_end : '', FALSE);
@@ -67,7 +67,7 @@ echo form_open('periods/save', array('class' => 'cssform', 'id' => 'schoolday_ad
 	<?php echo form_error($field); ?>
 
 	<p>
-		<label for="days" class="required">Days of the week</label>
+		<label for="days" class="required">Dias da semana</label>
 		<?php
 		$default_value = array();
 
@@ -87,7 +87,7 @@ echo form_open('periods/save', array('class' => 'cssform', 'id' => 'schoolday_ad
 	</p>
 
 	<p>
-		<label for="bookable">Can be booked</label>
+		<label for="bookable">Pode ser reservado</label>
 		<?php
 		$field = 'bookable';
 		echo form_hidden($field, '0');
@@ -99,7 +99,7 @@ echo form_open('periods/save', array('class' => 'cssform', 'id' => 'schoolday_ad
 			'checked' => set_value($field, isset($period) ? $period->bookable : 1, TRUE),
 		));
 		?>
-		<p class="hint">Tick this box to allow bookings for this period</p>
+		<p class="hint">Marque esta caixa para permitir reservas para este período</p>
 	</p>
 
 </fieldset>
@@ -108,8 +108,8 @@ echo form_open('periods/save', array('class' => 'cssform', 'id' => 'schoolday_ad
 <?php
 
 $this->load->view('partials/submit', array(
-	'submit' => array('Save', tab_index()),
-	'cancel' => array('Cancel', tab_index(), 'periods'),
+	'submit' => array('Salvar', tab_index()),
+	'cancel' => array('Cancelar', tab_index(), 'periods'),
 ));
 
 echo form_close();
