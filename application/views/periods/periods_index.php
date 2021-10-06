@@ -17,11 +17,11 @@ $sort_cols = ["None", "Name", "TimeStart", "TimeEnd", "Duration", "Days", "None"
 	<thead>
 	<tr class="heading">
 		<td class="h" title="N">&nbsp;</td>
-		<td class="h" title="Name">Nome</td>
-		<td class="h" title="TimeStart">Início</td>
-		<td class="h" title="TimeEnd">Término</td>
-		<td class="h" title="Duration">Duração</td>
-		<td class="h" title="Days">Dias da semana</td>
+		<td class="h" title="Nome">Nome</td>
+		<td class="h" title="Início">Início</td>
+		<td class="h" title="Término">Término</td>
+		<td class="h" title="Duração">Duração</td>
+		<td class="h" title="Dias da semana">Dias da semana</td>
 		<td class="n" title="X"></td>
 	</tr>
 	</thead>

@@ -1,4 +1,4 @@
-<h2>Log in</h2>
+<h2>Entrar</h2>
 
 <?php
 if (strlen($message)) {
@@ -14,10 +14,10 @@ echo form_open('login/submit', array('id'=>'login','class'=>'cssform'), array('p
 ?>
 
 
-<fieldset style="width:336px;"><legend accesskey="L" tabindex="<?php echo tab_index() ?>">Log in</legend>
+<fieldset style="width:336px;"><legend accesskey="L" tabindex="<?php echo tab_index() ?>">Entrar</legend>
 
 	<p>
-	  <label for="username" class="required">Username</label>
+	  <label for="username" class="required">Usuário</label>
 	  <?php
 		$value = set_value('username', '', FALSE);
 		echo form_input(array(
@@ -33,7 +33,7 @@ echo form_open('login/submit', array('id'=>'login','class'=>'cssform'), array('p
 
 
 	<p>
-	  <label for="password" class="required">Password</label>
+	  <label for="password" class="required">Senha</label>
 	  <?php
 		echo form_password(array(
 			'name' => 'password',
@@ -51,7 +51,7 @@ echo form_open('login/submit', array('id'=>'login','class'=>'cssform'), array('p
 <?php
 
 $this->load->view('partials/submit', array(
-	'submit' => array('Login', tab_index()),
+	'submit' => array('Entrar', tab_index()),
 ));
 
 echo form_close();

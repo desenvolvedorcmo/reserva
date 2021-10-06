@@ -3,12 +3,12 @@
 if ($this->userauth->logged_in()) {
 	$menu[1]['text'] = img('assets/images/ui/link_controlpanel.png', FALSE, 'hspace="4" align="top" alt=" "') . 'Painel de controle';
 	$menu[1]['href'] = site_url('/');
-	$menu[1]['title'] = 'Tasks';
+	$menu[1]['title'] = 'Painel de controle';
 
 	if($this->userauth->is_level(ADMINISTRATOR)){ $icon = 'user_administrator.png'; } else { $icon = 'user_teacher.png'; }
 	$menu[3]['text'] = img('assets/images/ui/logout.png', FALSE, 'hspace="4" align="top" alt=" "') . 'Sair';
 	$menu[3]['href'] = site_url('logout');
-	$menu[3]['title'] = 'Log out of classroombookings';
+	$menu[3]['title'] = 'Sair';
 }
 ?>
 
