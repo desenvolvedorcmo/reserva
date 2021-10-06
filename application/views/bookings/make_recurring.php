@@ -11,5 +11,5 @@
 	$user_id = $this->userauth->user->user_id;
 	echo form_dropdown('user_id', $userlist, $user_id, 'id="user_id"');
 	?>
-	<button type="submit" name="action" value="recurring">Make Recurring Booking</button>
+	<button type="submit" name="action" value="recurring">Múltiplas reservas</button>
 </p>

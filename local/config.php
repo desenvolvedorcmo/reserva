@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 return array(
 
 	'config' => array(
-		'base_url' => 'http://localhost/reserva/',
+		'base_url' => 'http://localhost/crbs-2.4.1/',
 		'log_threshold' => 1,
 		'index_page' => 'index.php',
 		'uri_protocol' => 'REQUEST_URI',

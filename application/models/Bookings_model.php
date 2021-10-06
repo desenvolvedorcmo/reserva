@@ -571,14 +571,14 @@ class Bookings_model extends CI_Model
 				case 'forward':
 					$query['date'] = $next_date;
 					$uri = 'bookings?' . http_build_query($query);
-					$link = anchor($uri, "Click here to view immediately after the holiday.");
+					$link = anchor($uri, "Clique aqui para escolher a pr&oacute;xima data dispon&iacute;vel.");
 					$html .= "<p><strong>{$link}</strong></p>";
 				break;
 
 				case 'back':
 					$query['date'] = $prev_date;
 					$uri = 'bookings?' . http_build_query($query);
-					$link = anchor($uri, "Click here to view immediately before the holiday.");
+					$link = anchor($uri, "Clique aqui para escolher a pr&oacute;xima data dispon&iacute;vel.");
 					$html .= "<p><strong>{$link}</strong></p>";
 				break;
 
@@ -599,7 +599,7 @@ class Bookings_model extends CI_Model
 		}
 
 		if (empty($periods)) {
-			$html .= msgbox('error', 'There are no periods configured or available for this day.');
+			$html .= msgbox('error', 'N&atilde;o existe per&iacute;odo cadastrado para essa reserva.');
 			$err = TRUE;
 		}
 

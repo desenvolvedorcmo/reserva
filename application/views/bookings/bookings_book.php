@@ -21,17 +21,17 @@ if (isset($booking) && ! empty($booking->date)) {
 
 <fieldset>
 
-	<legend accesskey="I" tabindex="<?php echo tab_index() ?>">Booking Information</legend>
+	<legend accesskey="I" tabindex="<?php echo tab_index() ?>">Informaç&otilde;es da reserva</legend>
 
 	<p>
-		<label>Use:</label>
+		<label>Motivo:</label>
 		<?php
 		$field = 'notes';
 		$value = set_value($field, isset($booking) ? $booking->notes : '', FALSE);
 		echo form_input(array(
 			'name' => $field,
 			'id' => $field,
-			'size' => '50',
+			'size' => '100',
 			'maxlength' => '100',
 			'tabindex' => tab_index(),
 			'value' => $value,
@@ -45,7 +45,7 @@ if (isset($booking) && ! empty($booking->date)) {
 
 
 	<p>
-		<label>Date:</label>
+		<label>Data:</label>
 		<?php
 		$field = 'date';
 		$default = '';
@@ -67,7 +67,7 @@ if (isset($booking) && ! empty($booking->date)) {
 
 
 	<p>
-		<label for="room_id" class="required">Room:</label>
+		<label for="room_id" class="required">Item da reserva:</label>
 		<?php
 		$room_options = array();
 		foreach ($rooms as $room) {
@@ -82,7 +82,7 @@ if (isset($booking) && ! empty($booking->date)) {
 
 
 	<p>
-		<label for="period_id" class="required">Period:</label>
+		<label for="period_id" class="required">Per&iacute;odo:</label>
 		<?php
 		$time_fmt = setting('time_format_period');
 		$period_options = array();
@@ -102,7 +102,7 @@ if (isset($booking) && ! empty($booking->date)) {
 
 
 	<p>
-		<label for="user_id">User:</label>
+		<label for="user_id">Usu&aacute;rio:</label>
 		<?php
 		$user_options = array('' => '(None)');
 		foreach ($users as $user) {
@@ -128,10 +128,10 @@ if (isset($booking) && ! empty($booking->date)) {
 
 <fieldset>
 
-	<legend accesskey="R" tabindex="<?php echo tab_index() ?>">Recurring options</legend>
+	<legend accesskey="R" tabindex="<?php echo tab_index() ?>">M&uacute;ltipla reserva</legend>
 
 	<p>
-		<label for="recurring">Recurring?</label>
+		<label for="recurring">Fazer m&uacute;ltipla reserva?</label>
 		<?php
 		$field = 'recurring';
 		$value = (isset($booking) && isset($booking->booking_id) && $booking->day_num) ? '1' : '0';
@@ -149,7 +149,7 @@ if (isset($booking) && ! empty($booking->date)) {
 	<?php echo form_error($field) ?>
 
 	<p class="recurring_fields" up-show-for=":checked">
-		<label for="week_id">Week:</label>
+		<label for="week_id">Semana:</label>
 		<?php
 		$week_options = array('' => '(None)');
 		foreach ($weeks as $week) {
@@ -163,7 +163,7 @@ if (isset($booking) && ! empty($booking->date)) {
 	<?php echo form_error($field) ?>
 
 	<p class="recurring_fields" up-show-for=":checked">
-		<label for="day_num">Day:</label>
+		<label for="day_num">Dia:</label>
 		<?php
 		$day_options = array('' => '(None)');
 		$day_options += $days;
@@ -180,10 +180,10 @@ if (isset($booking) && ! empty($booking->date)) {
 
 
 <?php
-$save_label = empty($booking_id) ? 'Book' : 'Save';
+$save_label = empty($booking_id) ? 'Reservar' : 'Salvar';
 $this->load->view('partials/submit', array(
 	'submit' => array($save_label, tab_index()),
-	'cancel' => array('Cancel', tab_index(), $cancel_uri),
+	'cancel' => array('Cancelar', tab_index(), $cancel_uri),
 ));
 
 echo form_close();

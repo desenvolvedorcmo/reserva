@@ -3,8 +3,8 @@
 echo $this->session->flashdata('saved');
 
 $iconbar = iconbar(array(
-	array('users/add', 'Add User', 'add.png'),
-	array('users/import', 'Import Users', 'user_import.png'),
+	array('users/add', 'Adicionar Usuário', 'add.png'),
+	array('users/import', 'Importar Usuários', 'user_import.png'),
 ));
 
 echo $iconbar;
@@ -17,12 +17,12 @@ $sort_cols = ["Type", "Enabled", "Username", "Display Name", "Last Login", "Acti
 	<col /><col /><col /><col />
 	<thead>
 	<tr class="heading">
-		<td class="h" title="Type">Type</td>
-		<td class="h" title="Enabled">Enabled</td>
-		<td class="h" title="Username">Username</td>
-		<td class="h" title="Name">Display name</td>
-		<td class="h" title="Lastlogin">Last login</td>
-		<td class="n" title="X"></td>
+		<td class="h" title="Tipo">Tipo</td>
+		<td class="h" title="Ativo">Ativo</td>
+		<td class="h" title="Usuario">Usuário</td>
+		<td class="h" title="Nome">Nome</td>
+		<td class="h" title="UltimoLogin">Último Login</td>
+		<td class="n" title=""></td>
 	</tr>
 	</thead>
 	<tbody>

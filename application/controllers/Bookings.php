@@ -185,7 +185,7 @@ class Bookings extends MY_Controller
 	{
 		$query = $this->input->get();
 
-		$this->data['title'] = 'Book a room';
+		$this->data['title'] = 'Reservar';
 		$this->data['showtitle'] = $this->data['title'];
 
 		// Either no URI, or all URI info specified
@@ -380,7 +380,7 @@ class Bookings extends MY_Controller
 			return redirect($uri);
 		}
 
-		$this->data['title'] = 'Edit booking';
+		$this->data['title'] = 'Editar reserva';
 		$this->data['showtitle'] = $this->data['title'];
 		$this->data['cancel_uri'] = 'bookings?' . http_build_query($query);
 

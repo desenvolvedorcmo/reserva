@@ -2,7 +2,7 @@
 echo $this->session->flashdata('saved');
 
 echo iconbar(array(
-	array('profile/edit', 'Edit my details', 'user_edit.png'),
+	array('profile/edit', 'Editar perfil', 'user_edit.png'),
 ));
 
 ?>
@@ -38,9 +38,9 @@ foreach($mybookings as $booking){
 <?php } ?>
 
 
-<h3>My total bookings</h3>
+<h3>Total de reservas</h3>
 <ul>
-	<li>Number of bookings ever made: <?php echo $total['all'] ?></li>
-	<li>Number of bookings this year to date: <?php echo $total['yeartodate'] ?></li>
-	<li>Number of current active bookings: <?php echo $total['active'] ?></li>
+	<li>N&uacute;mero de reservas realizadas: <?php echo $total['all'] ?></li>
+	<li>N&uacute;mero de reservas do ano corrente até a data atual: <?php echo $total['yeartodate'] ?></li>
+	<li>N&uacute;mero de reservas atualmente ativas: <?php echo $total['active'] ?></li>
 </ul>

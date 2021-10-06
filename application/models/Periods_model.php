@@ -12,13 +12,13 @@ class Periods_model extends CI_Model
 	{
 		parent::__construct();
 
-		$this->days[1] = 'Monday';
-		$this->days[2] = 'Tuesday';
-		$this->days[3] = 'Wednesday';
-		$this->days[4] = 'Thursday';
-		$this->days[5] = 'Friday';
-		$this->days[6] = 'Saturday';
-		$this->days[7] = 'Sunday';
+		$this->days[1] = 'Segunda-feira';
+		$this->days[2] = 'Terça-feira';
+		$this->days[3] = 'Quarta-feira';
+		$this->days[4] = 'Quinta-feira';
+		$this->days[5] = 'Sexta-feira';
+		$this->days[6] = 'Sabado';
+		$this->days[7] = 'Domingo';
 	}
 
 

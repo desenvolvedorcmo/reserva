@@ -4,12 +4,12 @@ echo $this->session->flashdata('saved');
 
 // Menu for all users
 $i = 0;
-$menu[$i]['text'] = 'Bookings';
+$menu[$i]['text'] = 'Reservas';
 $menu[$i]['icon'] = 'school_manage_bookings.png';
 $menu[$i]['href'] = site_url('bookings');
 
 $i++;
-$menu[$i]['text'] = 'My Profile';
+$menu[$i]['text'] = 'Meu Perfil';
 $menu[$i]['icon'] = ($this->userauth->is_level(ADMINISTRATOR)) ? 'user_administrator.png' : 'user_teacher.png';
 $menu[$i]['href'] = site_url('profile');
 
@@ -93,9 +93,9 @@ dotable($menu);
 
 // Check if user is admin
 if ($this->userauth->is_level(ADMINISTRATOR)) {
-	echo '<h2>School-related</h2>';
+	echo '<h2>Configuraç&otilde;es</h2>';
 	dotable($school);
-	echo '<h2>Management</h2>';
+	echo '<h2>Gerenciar</h2>';
 	dotable($admin);
 }
 
