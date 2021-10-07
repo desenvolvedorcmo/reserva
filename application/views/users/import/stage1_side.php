@@ -6,10 +6,10 @@ pre {
 </style>
 
 <div>
-	<h5>CSV format</h5>
-	<p>Your CSV file should be in this format:</p>
-	<pre><code>username, firstname, lastname, email, password</code></pre>
-	<p>It doesn't matter if it contains the header row.</p>
-	<p>Any usernames that already exist will be ignored.</p>
+	<h5>Formato CSV</h5>
+	<p>Seu arquivo CSV deverá ter o seguinte formato:</p>
+	<pre><code>usuario, nome, sobrenome, email, senha</code></pre>
+	<!--  <p>It doesn't matter if it contains the header row.</p>-->
+	<p>Todos os usuários que já existem serão ignorados.</p>
 </div>
 <br>

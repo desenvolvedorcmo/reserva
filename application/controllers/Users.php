@@ -259,7 +259,7 @@ class Users extends MY_Controller
 
 		$this->cleanup_import();
 
-		$this->data['title'] = 'Importar usuario';
+		$this->data['title'] = 'Importar Usuário';
 		$this->data['showtitle'] = $this->data['title'];
 		// $this->data['body'] = $this->load->view('users/import/stage1', NULL, TRUE);
 

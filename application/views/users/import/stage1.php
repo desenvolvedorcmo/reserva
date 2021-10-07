@@ -7,10 +7,10 @@ echo form_hidden('action', 'import');
 
 <fieldset class="cssform-stacked">
 
-	<legend accesskey="I" tabindex="<?= tab_index() ?>">Import Source</legend>
+	<legend accesskey="I" tabindex="<?= tab_index() ?>">Fonte de dados</legend>
 
 	<p class="input-group">
-		<label for="userfile" class="required">CSV File</label>
+		<label for="userfile" class="required">Arquivo CSV</label>
 		<?php
 		echo form_upload(array(
 			'name' => 'userfile',
@@ -21,7 +21,7 @@ echo form_hidden('action', 'import');
 			'value' => '',
 		));
 		?>
-		<p class="hint">Maximum filesize <span><?php echo $max_size_human ?></span>.</p>
+		<p class="hint">Tamanho m&aacute;ximo do arquivo <span><?php echo $max_size_human ?></span>.</p>
 	</p>
 
 
@@ -31,12 +31,12 @@ echo form_hidden('action', 'import');
 
 <fieldset>
 
-	<legend accesskey="F">Default values</legend>
+	<legend accesskey="F">Valores padr&atilde;o</legend>
 
-	<div>Enter the default values that will be applied to all users if not specified in the import file.</div>
+	<div>Insira os valores padrão que serão aplicados a todos os usuários caso não forem especificados no arquivo de importação.</div>
 
 	<p class="input-group">
-		<label for="password">Password</label>
+		<label for="password">Senha</label>
 		<?php
 		echo form_password(array(
 			'name' => 'password',
@@ -50,9 +50,9 @@ echo form_hidden('action', 'import');
 	</p>
 
 	<p class="input-group">
-		<label for="authlevel" class="required">Type</label>
+		<label for="authlevel" class="required">Tipo</label>
 		<?php
-		$data = array('1' => 'Administrator', '2' => 'Teacher');
+		$data = array('1' => 'Administrador', '2' => 'Funcionário');
 		echo form_dropdown(
 			'authlevel',
 			$data,
@@ -64,7 +64,7 @@ echo form_hidden('action', 'import');
 
 
 	<p class="input-group">
-		<label for="enabled">Enabled</label>
+		<label for="enabled">Habilitado</label>
 		<?php
 		echo form_hidden('enabled', '0');
 		echo form_checkbox(array(
@@ -83,8 +83,8 @@ echo form_hidden('action', 'import');
 <?php
 
 $this->load->view('partials/submit', array(
-	'submit' => array('Create Accounts', tab_index()),
-	'cancel' => array('Cancel', tab_index(), 'users'),
+	'submit' => array('Criar Usuários', tab_index()),
+	'cancel' => array('Cancelar', tab_index(), 'users'),
 ));
 
 echo form_close();
