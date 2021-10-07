@@ -94,7 +94,7 @@ class Rooms extends MY_Controller
 
 		$this->data['rooms'] = $this->rooms_model->Get();
 
-		$this->data['title'] = 'Salas';
+		$this->data['title'] = 'Itens para reserva';
 		$this->data['showtitle'] = $this->data['title'];
 		$this->data['body'] = $this->load->view('rooms/rooms_index', $this->data, TRUE);
 
@@ -157,7 +157,7 @@ class Rooms extends MY_Controller
 		$this->data['fields'] = $this->rooms_model->GetFields();
 		$this->data['fieldvalues'] = $this->rooms_model->GetFieldValues($id);
 
-		$this->data['title'] = 'Editar sala';
+		$this->data['title'] = 'Editar Item';
 		$this->data['showtitle'] = $this->data['title'];
 
 		$columns = array(
@@ -376,7 +376,7 @@ class Rooms extends MY_Controller
 		$this->data['action'] = 'rooms/delete';
 		$this->data['id'] = $id;
 		$this->data['cancel'] = 'rooms';
-		$this->data['text'] = 'If you delete this room, <strong>all bookings</strong> for this room will be <strong>permanently deleted</strong> as well.';
+		$this->data['text'] = 'Se você excluir esta sala, <strong> todas as reservas </strong> para esta sala também serão <strong> excluídas permanentemente </strong>.';
 
 		$row = $this->rooms_model->Get($id);
 		$this->data['title'] = 'Deletar sala ('.html_escape($row->name).')';
@@ -405,7 +405,7 @@ class Rooms extends MY_Controller
 		$this->data['options_list'] = $this->rooms_model->options;
 		$this->data['fields'] = $this->rooms_model->GetFields();
 		$this->data['title'] = 'Campo de salas';
-		$this->data['showtitle'] = 'Custom Fields';
+		$this->data['showtitle'] = 'Campos Personalizados';
 		$this->data['body'] = $this->load->view('rooms/fields/index', $this->data, TRUE);
 
 		return $this->render();

@@ -1,4 +1,4 @@
 <dl>
-  <dt>Room Information</dt>
-  <dd>The only required field for a room is the <span>name</span> field. All of the other fields are there to help yourself and other users.</dd>
+  <dt>Informação Item/Sala</dt>
+  <dd>O único campo obrigatório para uma sala é o campo do <span>Nome</span>. Todos os outros campos existem para ajudar você e outros usuários.</dd>
 </dl>

@@ -3,8 +3,8 @@
 echo $this->session->flashdata('saved');
 
 $iconbar = iconbar(array(
-	array('rooms/add_field', 'Add Field', 'add.png'),
-	array('rooms', 'Rooms', 'school_manage_rooms.png'),
+	array('rooms/add_field', 'Adicionar campo', 'add.png'),
+	array('rooms', 'itens', 'school_manage_rooms.png'),
 ));
 
 echo $iconbar;
@@ -17,9 +17,9 @@ $sort_cols = ["Name", "Type", "Options", "None"];
 	<col /><col /><col /><col />
 	<thead>
 	<tr class="heading">
-		<td class="h" title="Name">Name</td>
-		<td class="h" title="Type">Type</td>
-		<td class="h" title="Options">Options</td>
+		<td class="h" title="Nome">Nome</td>
+		<td class="h" title="Tipo">Tipo</td>
+		<td class="h" title="Opções">Opções</td>
 		<td class="n" title="X"></td>
 	</tr>
 	</thead>
@@ -51,7 +51,7 @@ $sort_cols = ["Name", "Type", "Options", "None"];
 	</tr>
 	<?php $i++; }
 	} else {
-		echo '<td colspan="4" align="center" style="padding:16px 0">No room fields exist!</td>';
+		echo '<td colspan="4" align="center" style="padding:16px 0">Não existem campos personalizados!</td>';
 	}
 	?>
 	</tbody>

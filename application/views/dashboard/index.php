@@ -44,7 +44,7 @@ $school[$i]['icon'] = 'school_manage_holidays.png';
 $school[$i]['href'] = site_url('holidays');
 
 $i++;
-$school[$i]['text'] = 'Rooms';
+$school[$i]['text'] = 'Itens para reserva';
 $school[$i]['icon'] = 'school_manage_rooms.png';
 $school[$i]['href'] = site_url('rooms');
 
