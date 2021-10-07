@@ -11,10 +11,10 @@ echo form_open('weeks/save', array('class' => 'cssform', 'id' => 'week_add'), ar
 
 <fieldset>
 
-	<legend accesskey="W" tabindex="<?= tab_index() ?>">Week Information</legend>
+	<legend accesskey="W" tabindex="<?= tab_index() ?>">Informações da semana</legend>
 
 	<p>
-		<label for="name" class="required">Name</label>
+		<label for="name" class="required">Nome</label>
 		<?php
 		$field = 'name';
 		$value = set_value($field, isset($week) ? $week->name : '', FALSE);
@@ -31,7 +31,7 @@ echo form_open('weeks/save', array('class' => 'cssform', 'id' => 'week_add'), ar
 	<?php echo form_error($field) ?>
 
 	<p>
-		<label for="bgcol" class="required">Background Colour</label>
+		<label for="bgcol" class="required">Cor de fundo</label>
 		<?php
 		$field = 'bgcol';
 		$value = set_value($field, isset($week) ? $week->bgcol : '666666', FALSE);
@@ -49,7 +49,7 @@ echo form_open('weeks/save', array('class' => 'cssform', 'id' => 'week_add'), ar
 	<?php echo form_error($field); ?>
 
 	<p>
-		<label for="fgcol" class="required">Foreground Colour</label>
+		<label for="fgcol" class="required">Cor de primeiro plano</label>
 		<?php
 		$field = 'fgcol';
 		$value = set_value($field, isset($week) ? $week->fgcol : 'FFFFFF', FALSE);
@@ -71,9 +71,9 @@ echo form_open('weeks/save', array('class' => 'cssform', 'id' => 'week_add'), ar
 
 <fieldset>
 
-	<legend accesskey="D" tabindex="6">Week Dates</legend>
+	<legend accesskey="D" tabindex="6">Datas da semana</legend>
 
-	<div>Please select the week-commencing (Monday) dates within the current academic year that this week applies to.</div>
+	<div>Selecione as datas de início da semana (segunda-feira) dentro do ano acadêmico atual a que se aplica esta semana.</div>
 
 	<?php
 
@@ -139,8 +139,8 @@ echo form_open('weeks/save', array('class' => 'cssform', 'id' => 'week_add'), ar
 <?php
 
 $this->load->view('partials/submit', array(
-	'submit' => array('Save', tab_index()),
-	'cancel' => array('Cancel', tab_index(), 'weeks'),
+	'submit' => array('Salvar', tab_index()),
+	'cancel' => array('Cancelar', tab_index(), 'weeks'),
 ));
 
 echo form_close();

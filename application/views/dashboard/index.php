@@ -34,7 +34,7 @@ $school[$i]['icon'] = 'school_manage_times.png';
 $school[$i]['href'] = site_url('periods');
 
 $i++;
-$school[$i]['text'] = 'Week Cycle';
+$school[$i]['text'] = 'Ciclo da semana';
 $school[$i]['icon'] = 'school_manage_weeks.png';
 $school[$i]['href'] = site_url('weeks');
 

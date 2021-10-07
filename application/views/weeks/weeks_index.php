@@ -3,8 +3,8 @@
 echo $this->session->flashdata('saved');
 
 $iconbar = iconbar(array(
-	array('weeks/add', 'Add Week', 'add.png'),
-	array('weeks/academicyear', 'Academic Year', 'school_manage_weeks_academicyear.png'),
+	array('weeks/add', 'Adicionar semana', 'add.png'),
+	array('weeks/academicyear', 'Ano acadêmico', 'school_manage_weeks_academicyear.png'),
 ));
 
 echo $iconbar;
@@ -17,8 +17,8 @@ $sort_cols = ["Name", "Colour", "None"];
 	<col /><col /><col />
 	<thead>
 		<tr class="heading">
-			<td class="h" title="Name">Name</td>
-			<td class="h" title="Colour">Colour</td>
+			<td class="h" title="Nome">Nome</td>
+			<td class="h" title="Cor">Cor</td>
 			<td class="n" title="X">&nbsp;</td>
 		</tr>
 	</thead>

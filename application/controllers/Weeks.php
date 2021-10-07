@@ -31,7 +31,7 @@ class Weeks extends MY_Controller
 		$this->data['academicyear'] = $this->weeks_model->GetAcademicYear();
 
 		if ( ! $this->data['academicyear']) {
-			$this->data['body'] = msgbox('warning', "Please configure your academic year first.");
+			$this->data['body'] = msgbox('warning', "Por favor, configure seu ano útil primeiro.");
 		} else {
 			$this->data['body'] = '';
 		}
@@ -176,7 +176,7 @@ class Weeks extends MY_Controller
 		$this->data['action'] = 'weeks/delete';
 		$this->data['id'] = $id;
 		$this->data['cancel'] = 'weeks';
-		$this->data['text'] = 'If you delete this week, <strong>all recurring bookings</strong> attached to this week will no longer be visible.';
+		$this->data['text'] = 'Se você excluir esta semana, todas as reservas recorrentes anexadas a esta semana não estarão mais visíveis.';
 
 		$row = $this->weeks_model->Get($id);
 		$this->data['title'] = 'Deletar semana (' . html_escape($row->name) . ')';
@@ -200,7 +200,7 @@ class Weeks extends MY_Controller
 	 		$this->data['academicyear']->date_end = date("Y-m-d", strtotime("+1 Year", strtotime(date("Y-m-d"))));
 	 	}
 
-	 	$this->data['title'] = 'ano acabemico';
+	 	$this->data['title'] = 'Ano útil';
 	 	$this->data['showtitle'] = $this->data['title'];
 	 	$this->data['body'] = $this->load->view('weeks/weeks_academicyear', $this->data, True);
 
@@ -231,7 +231,7 @@ class Weeks extends MY_Controller
 
  		$this->weeks_model->SaveAcademicYear($year_data);
 
- 		$this->session->set_flashdata('saved', msgbox('info', 'The Academic Year dates have been updated.'));
+ 		$this->session->set_flashdata('saved', msgbox('info', 'As datas do ano útil foram atualizadas.'));
 
 	 	redirect('weeks/academicyear');
 	 }

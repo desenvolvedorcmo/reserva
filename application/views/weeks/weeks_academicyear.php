@@ -2,7 +2,7 @@
 echo $this->session->flashdata('saved');
 
 $iconbar = iconbar(array(
-	array('weeks', 'Weeks', 'school_manage_weeks.png'),
+	array('weeks', 'Semanas', 'school_manage_weeks.png'),
 ));
 
 echo $iconbar;
@@ -13,10 +13,10 @@ echo form_open('weeks/saveacademicyear', array('class' => 'cssform', 'id' => 'sa
 
 <fieldset style="width:50%">
 
-	<legend accesskey="A" tabindex="<?= tab_index() ?>">Academic year</legend>
+	<legend accesskey="A" tabindex="<?= tab_index() ?>">Ano útil</legend>
 
 	<p>
-		<label for="date_start" class="required">Start date:</label>
+		<label for="date_start" class="required">Data de início:</label>
 		<?php
 		$field = 'date_start';
 		$value = set_value('date_start', date('d/m/Y', strtotime($academicyear->date_start)), FALSE);
@@ -34,7 +34,7 @@ echo form_open('weeks/saveacademicyear', array('class' => 'cssform', 'id' => 'sa
 	<?php echo form_error($field); ?>
 
 	<p>
-		<label for="date_end" class="required">End date:</label>
+		<label for="date_end" class="required">Data de término:</label>
 		<?php
 		$field = 'date_end';
 		$value = set_value($field, date('d/m/Y', strtotime($academicyear->date_end)), FALSE);
@@ -57,8 +57,8 @@ echo form_open('weeks/saveacademicyear', array('class' => 'cssform', 'id' => 'sa
 <?php
 
 $this->load->view('partials/submit', array(
-	'submit' => array('Save', tab_index()),
-	'cancel' => array('Cancel', tab_index(), 'weeks'),
+	'submit' => array('Salvar', tab_index()),
+	'cancel' => array('Cancelar', tab_index(), 'weeks'),
 ));
 
 echo form_close();

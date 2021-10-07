@@ -45,7 +45,7 @@ if ($this->userauth->logged_in()) {
 	if (setting('maintenance_mode') == 1) {
 		$message = setting('maintenance_mode_message');
 		if ( ! strlen($message)) {
-			$message = 'classroombookings is currently in maintenance mode. Please check again soon.';
+			$message = 'Estamos atualmente em modo de manutenção. Verifique novamente em breve.';
 		}
 		echo "<div class='maintenance-wrapper'>";
 		echo "<div class='outer'>";

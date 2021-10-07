@@ -1,6 +1,6 @@
 <fieldset><legend accesskey="D" tabindex="6">Week Dates</legend>
 
-<div>Please select the week-commencing (Monday) dates within the current academic year that this week applies to.</div>
+<div>Selecione as datas de início da semana (segunda-feira) dentro do Ano útil atual a que se aplica esta semana.</div>
 
 <?php
 /*
