@@ -7,7 +7,7 @@ var dayArrayMed = new Array('Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab');
 var dayArrayLong = new Array('Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado');
 var monthArrayShort = new Array('Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez');
 var monthArrayMed = new Array('Jan', 'Fev', 'Mar', 'Apb', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez');
-var monthArrayLong = new Array('Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'November', 'December');
+var monthArrayLong = new Array('Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro');
 
 // these variables define the date formatting we're expecting and outputting.
 // If you want to use a different format by default, change the defaultDateSeparator
@@ -173,8 +173,8 @@ function refreshDatePicker(dateFieldName, year, month, day)
   var today = new Date();
   var todayString = "Today is " + dayArrayMed[today.getDay()] + ", " + monthArrayMed[ today.getMonth()] + " " + today.getDate();
   html += TR_todaybutton + TD_todaybutton;
-  html += "<button class='dpTodayButton' onClick='refreshDatePicker(\"" + dateFieldName + "\");'>this month</button> ";
-  html += "<button class='dpTodayButton' onClick='updateDateField(\"" + dateFieldName + "\");'>close</button>";
+  html += "<button class='dpTodayButton' onClick='refreshDatePicker(\"" + dateFieldName + "\");'>Esse Mês</button> ";
+  html += "<button class='dpTodayButton' onClick='updateDateField(\"" + dateFieldName + "\");'>Fechar</button>";
   html += xTD + xTR;
 
   // and finally, close the table
