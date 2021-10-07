@@ -64,13 +64,13 @@ $admin[$i]['href'] = site_url('reports');
 */
 
 $i++;
-$admin[$i]['text'] = 'Users';
+$admin[$i]['text'] = 'Usuários';
 $admin[$i]['icon'] = 'school_manage_users.png';
 $admin[$i]['href'] = site_url('users');
 
 
 $i++;
-$admin[$i]['text'] = 'Settings';
+$admin[$i]['text'] = 'Configurações';
 $admin[$i]['icon'] = 'school_manage_settings.png';
 $admin[$i]['href'] = site_url('settings/general');
 

@@ -49,7 +49,7 @@ class Users extends MY_Controller
 		$this->data['pagelinks'] = $this->pagination->create_links();
 		$this->data['users'] = $this->users_model->Get(NULL, $pagination_config['per_page'], $page);
 
-		$this->data['title'] = 'gerenciar usuario';
+		$this->data['title'] = 'Gerenciar Usuário';
 		$this->data['showtitle'] = $this->data['title'];
 		$this->data['body'] = $this->load->view('users/users_index', $this->data, TRUE);
 
@@ -103,7 +103,7 @@ class Users extends MY_Controller
 
 		$this->data['departments'] = $this->departments_model->Get(NULL, NULL, NULL);
 
-		$this->data['title'] = 'Editar usuario';
+		$this->data['title'] = 'Editar Usuário';
 		$this->data['showtitle'] = $this->data['title'];
 
 		$columns = array(
@@ -224,7 +224,7 @@ class Users extends MY_Controller
 		}
 
 		if ($id == $_SESSION['user_id']) {
-			$flashmsg = msgbox('error', "You cannot delete your own user account.");
+			$flashmsg = msgbox('error', "Você não pode excluir seu próprio usuário.");
 			$this->session->set_flashdata('saved', $flashmsg);
 			return redirect('users');
 		}
@@ -232,11 +232,11 @@ class Users extends MY_Controller
 		$this->data['action'] = 'users/delete';
 		$this->data['id'] = $id;
 		$this->data['cancel'] = 'users';
-		$this->data['text'] = 'If you delete this user, all of their past and future bookings will also be deleted, and their rooms will no longer be owned by them.';
+		$this->data['text'] = 'Se você excluir este usuário, todas as suas reservas passadas e futuras também serão excluídas.';
 
 		$row = $this->users_model->Get($id);
 
-		$this->data['title'] = 'Deletar usuario ('.html_escape($row->username).')';
+		$this->data['title'] = 'Excluir usuario ('.html_escape($row->username).')';
 		$this->data['showtitle'] = $this->data['title'];
 		$this->data['body'] = $this->load->view('partials/deleteconfirm', $this->data, TRUE);
 

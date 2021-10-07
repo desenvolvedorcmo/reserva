@@ -10,10 +10,10 @@ echo form_open_multipart('users/save', array('class' => 'cssform', 'id' => 'user
 
 <fieldset>
 
-	<legend accesskey="U" tabindex="<?php echo tab_index() ?>">User Details</legend>
+	<legend accesskey="U" tabindex="<?php echo tab_index() ?>">Informaç&otilde;es do usu&aacute;rio</legend>
 
 	<p>
-		<label for="username" class="required">Username</label>
+		<label for="username" class="required">Usu&aacute;rio</label>
 		<?php
 		$field = 'username';
 		$value = set_value($field, isset($user) ? $user->username : '', FALSE);
@@ -30,11 +30,12 @@ echo form_open_multipart('users/save', array('class' => 'cssform', 'id' => 'user
 	<?php echo form_error($field); ?>
 
 	<p>
-		<label for="authlevel" class="required">Type</label>
+		<label for="authlevel" class="required">Tipo</label>
 		<?php
 		$field = 'authlevel';
 		$value = set_value($field, isset($user) ? $user->authlevel : '2', FALSE);
-		$options = array('1' => 'Administrator', '2' => 'Teacher');
+		//$options = array('1' => 'Administrator', '2' => 'Teacher');
+		$options = array('1' => 'Administrador', '2' => 'Funcionário');
 		echo form_dropdown(
 			$field,
 			$options,
@@ -46,7 +47,7 @@ echo form_open_multipart('users/save', array('class' => 'cssform', 'id' => 'user
 	<?php echo form_error($field); ?>
 
 	<p>
-		<label for="enabled">Enabled</label>
+		<label for="enabled">Habilitado</label>
 		<?php
 		$field = 'enabled';
 		$value = isset($user) ? $user->enabled : '1';
@@ -63,7 +64,7 @@ echo form_open_multipart('users/save', array('class' => 'cssform', 'id' => 'user
 	</p>
 
 	<p>
-		<label for="email">Email address</label>
+		<label for="email">E-mail</label>
 		<?php
 		$field = 'email';
 		$value = set_value($field, isset($user) ? $user->email : '', FALSE);
@@ -87,11 +88,11 @@ echo form_open_multipart('users/save', array('class' => 'cssform', 'id' => 'user
 	<legend accesskey="P" tabindex="<?php echo tab_index() ?>">Password</legend>
 
 	<?php if (isset($user)): ?>
-	<div>Change the user's password by entering it twice in these boxes.</div>
+	<div>Altere a senha do usuário digitando-a nos dois campos abaixo.</div>
 	<?php endif; ?>
 
 	<p>
-		<label for="password1" class="required">Password</label>
+		<label for="password1" class="required">Senha</label>
 		<?php
 		$field = 'password1';
 		echo form_password(array(
@@ -106,7 +107,7 @@ echo form_open_multipart('users/save', array('class' => 'cssform', 'id' => 'user
 	<?php echo form_error($field); ?>
 
 	<p>
-		<label for="password2" class="required">Password (again)</label>
+		<label for="password2" class="required">Confirmar senha</label>
 		<?php
 		$field = 'password2';
 		echo form_password(array(
@@ -125,10 +126,10 @@ echo form_open_multipart('users/save', array('class' => 'cssform', 'id' => 'user
 
 <fieldset>
 
-	<legend accesskey="P" tabindex="<?php echo tab_index() ?>">Personal Details</legend>
+	<legend accesskey="P" tabindex="<?php echo tab_index() ?>">Informaç&otilde;es pessoais</legend>
 
 	<p>
-		<label for="firstname">First name</label>
+		<label for="firstname">Nome</label>
 		<?php
 		$field = 'firstname';
 		$value = set_value($field, isset($user) ? $user->firstname : '', FALSE);
@@ -145,7 +146,7 @@ echo form_open_multipart('users/save', array('class' => 'cssform', 'id' => 'user
 	<?php echo form_error($field); ?>
 
 	<p>
-		<label for="lastname">Last name</label>
+		<label for="lastname">Sobrenome</label>
 		<?php
 		$field = 'lastname';
 		$value = set_value($field, isset($user) ? $user->lastname : '', FALSE);
@@ -162,7 +163,7 @@ echo form_open_multipart('users/save', array('class' => 'cssform', 'id' => 'user
 	<?php echo form_error($field); ?>
 
 	<p>
-		<label for="displayname">Display name</label>
+		<label for="displayname">Nome de tratamento</label>
 		<?php
 		$field = 'displayname';
 		$value = set_value($field, isset($user) ? $user->displayname : '', FALSE);
@@ -179,7 +180,7 @@ echo form_open_multipart('users/save', array('class' => 'cssform', 'id' => 'user
 	<?php echo form_error($field); ?>
 
 	<p>
-		<label for="department">Department</label>
+		<label for="department">Departamento</label>
 		<?php
 		$options = array('' => '(None)');
 		if ($departments) {
@@ -198,7 +199,7 @@ echo form_open_multipart('users/save', array('class' => 'cssform', 'id' => 'user
 	<?php echo form_error($field); ?>
 
 	<p>
-		<label for="ext">Phone extension</label>
+		<label for="ext">Telefone</label>
 		<?php
 		$field = 'ext';
 		$value = set_value($field, isset($user) ? $user->ext : '', FALSE);
@@ -220,8 +221,8 @@ echo form_open_multipart('users/save', array('class' => 'cssform', 'id' => 'user
 <?php
 
 $this->load->view('partials/submit', array(
-	'submit' => array('Save', tab_index()),
-	'cancel' => array('Cancel', tab_index(), 'users'),
+	'submit' => array('Salvar', tab_index()),
+	'cancel' => array('Cancelar', tab_index(), 'users'),
 ));
 
 echo form_close();
