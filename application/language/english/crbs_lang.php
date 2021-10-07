@@ -1,15 +1,15 @@
 <?php
 
-$lang['crbs_mustbeloggedin'] = 'You must be logged in to access this page.';
-$lang['crbs_mustbeadmin'] = 'You must be an Administrator to access this page.';
+$lang['crbs_mustbeloggedin'] = 'Você precisa estar logado para acessar esta página.';
+$lang['crbs_mustbeadmin'] = 'Você deve ser um administrador para acessar esta página.';
 
-$lang['crbs_action_dberror'] = 'A database error occured while %s this item.';
-$lang['dberror'] = 'A database error occured while %s the %s.';
-$lang['crbs_action_added'] = '%s has been added successfully.';
-$lang['crbs_action_saved'] = '%s has been saved successfully.';
-$lang['crbs_action_modified'] = '%s has been modified successfully.';
-$lang['crbs_action_deleted'] = 'The item has been deleted successfully.';
+$lang['crbs_action_dberror'] = 'Ocorreu um erro de banco de dados enquanto %s este item.';
+$lang['dberror'] = 'Ocorreu um erro de banco de dados enquanto %s o %s.';
+$lang['crbs_action_added'] = '%s foi adicionado com sucesso.';
+$lang['crbs_action_saved'] = '%s foi excluído com sucesso.';
+$lang['crbs_action_modified'] = '%s foi modificado com sucesso.';
+$lang['crbs_action_deleted'] = 'O item foi excluído com sucesso.';
 
-$lang['colour_invalid'] = 'You entered an invalid colour value.';
+$lang['colour_invalid'] = 'Você inseriu um valor de cor inválido.';
 
 ?>

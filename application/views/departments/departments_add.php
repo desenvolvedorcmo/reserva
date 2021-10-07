@@ -9,10 +9,10 @@ echo form_open('departments/save', array('class' => 'cssform', 'id' => 'departme
 
 <fieldset>
 
-	<legend accesskey="D" tabindex="<?= tab_index() ?>">Department details</legend>
+	<legend accesskey="D" tabindex="<?= tab_index() ?>">Detalhes do Departamento</legend>
 
 	<p>
-		<label for="name" class="required">Name</label>
+		<label for="name" class="required">Nome</label>
 		<?php
 		$field = 'name';
 		$value = set_value($field, isset($department) ? $department->name : '', FALSE);
@@ -29,7 +29,7 @@ echo form_open('departments/save', array('class' => 'cssform', 'id' => 'departme
 	<?php echo form_error($field); ?>
 
 	<p>
-		<label for="description">Description</label>
+		<label for="description">Descrição</label>
 		<?php
 		$field = 'description';
 		$value = set_value($field, isset($department) ? $department->description : '', FALSE);
@@ -51,8 +51,8 @@ echo form_open('departments/save', array('class' => 'cssform', 'id' => 'departme
 <?php
 
 $this->load->view('partials/submit', array(
-	'submit' => array('Save', tab_index()),
-	'cancel' => array('Cancel', tab_index(), 'departments'),
+	'submit' => array('Salvar', tab_index()),
+	'cancel' => array('Cancelar', tab_index(), 'departments'),
 ));
 
 echo form_close();

@@ -127,7 +127,7 @@ if ($this->userauth->logged_in()) {
 					<a href="https://www.classroombookings.com/" target="_blank">classroombookings</a> version <?= VERSION ?>.
 					&copy; <?= date('Y') ?> Craig A Rodway.
 					<br />
-					Load time: <?php echo $this->benchmark->elapsed_time() ?> seconds.
+					Tempo de carregamento: <?php echo $this->benchmark->elapsed_time() ?> segundos.
 				</span>
 				<br /><br />
 			</div>

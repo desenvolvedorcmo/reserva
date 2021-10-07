@@ -49,7 +49,7 @@ $school[$i]['icon'] = 'school_manage_rooms.png';
 $school[$i]['href'] = site_url('rooms');
 
 $i++;
-$school[$i]['text'] = 'Departments';
+$school[$i]['text'] = 'Departamentos';
 $school[$i]['icon'] = 'school_manage_departments.png';
 $school[$i]['href'] = site_url('departments');
 

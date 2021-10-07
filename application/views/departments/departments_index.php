@@ -3,7 +3,7 @@
 echo $this->session->flashdata('saved');
 
 $iconbar = iconbar(array(
-	array('departments/add', 'Add Department', 'add.png'),
+	array('departments/add', 'Adicionar Departamento', 'add.png'),
 ));
 
 echo $iconbar;
@@ -16,8 +16,8 @@ $sort_cols = ["Name", "Description", "None"];
 	<col /><col /><col />
 	<thead>
 	<tr class="heading">
-		<td class="h" title="Name">Name</td>
-		<td class="h" title="Description">Description</td>
+		<td class="h" title="Nome">Nome</td>
+		<td class="h" title="Descrição">Descrição</td>
 		<td class="n" title="X">&nbsp;</td>
 	</tr>
 	</thead>
