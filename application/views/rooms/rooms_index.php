@@ -3,8 +3,8 @@
 echo $this->session->flashdata('saved');
 
 $iconbar = iconbar(array(
-	array('rooms/add', 'Add Room', 'add.png'),
-	array('rooms/fields', 'Custom Fields', 'room_fields.png'),
+	array('rooms/add', 'Adicionar Item', 'add.png'),
+	array('rooms/fields', 'Campos personalizados', 'room_fields.png'),
 ));
 
 echo $iconbar;
@@ -17,10 +17,10 @@ $sort_cols = ["Name", "Location", "Teacher", "Notes", "Photo", "None"];
 	<col /><col /><col />
 	<thead>
 	<tr class="heading">
-		<td class="h" title="Name">Name</td>
-		<td class="h" title="Location">Location</td>
-		<td class="h" title="Teacher">Teacher</td>
-		<td class="h" title="Photo">Photo</td>
+		<td class="h" title="Nome">Nome</td>
+		<td class="h" title="Local">Local</td>
+		<td class="h" title="Usuário">Usuário</td>
+		<td class="h" title="Foto">Foto</td>
 		<td class="n" title="X"></td>
 	</tr>
 	</thead>

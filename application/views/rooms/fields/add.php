@@ -17,10 +17,10 @@ echo form_open('rooms/save_field', array('class' => 'cssform', 'id' => 'fields_a
 
 <fieldset>
 
-	<legend accesskey="F" tabindex="<?= tab_index() ?>">Field Details</legend>
+	<legend accesskey="F" tabindex="<?= tab_index() ?>">Detalhes do campo</legend>
 
 	<p>
-		<label for="name" class="required">Name</label>
+		<label for="name" class="required">Nome</label>
 		<?php
 		$input_name = 'name';
 		$value = set_value($input_name, isset($field) ? $field->name : '', FALSE);
@@ -39,7 +39,7 @@ echo form_open('rooms/save_field', array('class' => 'cssform', 'id' => 'fields_a
 	<?php if ( ! isset($field)): ?>
 
 	<p>
-		<label for="type">Type</label>
+		<label for="type">Tipo</label>
 		<?php
 
 		$input_name = 'type';
@@ -118,8 +118,8 @@ echo form_open('rooms/save_field', array('class' => 'cssform', 'id' => 'fields_a
 <?php
 
 $this->load->view('partials/submit', array(
-	'submit' => array('Save', tab_index()),
-	'cancel' => array('Cancel', tab_index(), 'rooms/fields'),
+	'submit' => array('Salvar', tab_index()),
+	'cancel' => array('Cancelar', tab_index(), 'rooms/fields'),
 ));
 
 echo form_close();

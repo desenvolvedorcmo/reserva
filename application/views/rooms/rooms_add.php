@@ -10,10 +10,10 @@ echo form_open_multipart('rooms/save', array('class' => 'cssform', 'id' => 'room
 
 <fieldset>
 
-	<legend accesskey="R" tabindex="<?php echo tab_index() ?>">Room details</legend>
+	<legend accesskey="R" tabindex="<?php echo tab_index() ?>">Detalhes do item</legend>
 
 	<p>
-		<label for="name" class="required">Name</label>
+		<label for="name" class="required">Nome</label>
 		<?php
 		$field = 'name';
 		$value = set_value($field, isset($room) ? $room->name : '', FALSE);
@@ -30,7 +30,7 @@ echo form_open_multipart('rooms/save', array('class' => 'cssform', 'id' => 'room
 	<?php echo form_error($field); ?>
 
 	<p>
-		<label for="location">Location</label>
+		<label for="location">Local</label>
 		<?php
 		$field = 'location';
 		$value = set_value($field, isset($room) ? $room->location : '', FALSE);
@@ -47,7 +47,7 @@ echo form_open_multipart('rooms/save', array('class' => 'cssform', 'id' => 'room
 	<?php echo form_error($field); ?>
 
 	<p>
-		<label for="user_id">Teacher</label>
+		<label for="user_id">Usuário</label>
 		<?php
 		$userlist = array('' => '(None)');
 		foreach ($users as $user) {
@@ -62,7 +62,7 @@ echo form_open_multipart('rooms/save', array('class' => 'cssform', 'id' => 'room
 	<?php echo form_error($field); ?>
 
 	<p>
-		<label for="notes">Notes</label>
+		<label for="notes">Descrição</label>
 		<?php
 		$field = 'notes';
 		$value = set_value($field, isset($room) ? $room->notes : '', FALSE);
@@ -79,7 +79,7 @@ echo form_open_multipart('rooms/save', array('class' => 'cssform', 'id' => 'room
 	<?php echo form_error($field) ?>
 
 	<p>
-		<label for="bookable">Can be booked</label>
+		<label for="bookable">Pode ser reservado</label>
 		<?php
 		$field = 'bookable';
 		$value = isset($room) ? $room->bookable : '1';
@@ -93,7 +93,7 @@ echo form_open_multipart('rooms/save', array('class' => 'cssform', 'id' => 'room
 			'checked' => $checked,
 		));
 		?>
-		<p class="hint">Tick this box to allow bookings to be made in this room</p>
+		<p class="hint">Marque esta caixa para permitir que as reservas sejam feitas neste quarto</p>
 	</p>
 
 </fieldset>
@@ -101,14 +101,14 @@ echo form_open_multipart('rooms/save', array('class' => 'cssform', 'id' => 'room
 
 <fieldset>
 
-	<legend accesskey="P" tabindex="7">Photo</legend>
+	<legend accesskey="P" tabindex="7">Foto</legend>
 
 	<br>
-	<div>Add a photo of the room which users will be able to view.</div>
+	<div>Adicione uma foto da sala/Item que os usuários poderão ver.</div>
 	<br>
 
 	<p>
-		<label>Current photo</label>
+		<label>Foto atual</label>
 		<?php
 		if (isset($room) && isset($room->photo) && ! empty($room->photo)) {
 			$path = "uploads/{$room->photo}";
@@ -117,16 +117,16 @@ echo form_open_multipart('rooms/save', array('class' => 'cssform', 'id' => 'room
 				$img = img($path, FALSE, "width='200' style='width:200px;height:auto;max-width:200px;padding:1px;border:1px solid #ccc'");
 				echo anchor($url, $img);
 			} else {
-				echo '<em>None</em>';
+				echo '<em>Nenhum</em>';
 			}
 		} else {
-			echo '<em>None</em>';
+			echo '<em>Nenhum</em>';
 		}
 		?>
 	</p>
 
 	<p>
-		<label for="userfile">File upload</label>
+		<label for="userfile">Upload</label>
 		<?php
 		echo form_upload(array(
 			'name' => 'userfile',
@@ -139,8 +139,8 @@ echo form_open_multipart('rooms/save', array('class' => 'cssform', 'id' => 'room
 		?>
 		<br>
 		<br>
-		<p class="hint">Maximum filesize <span><?php echo $max_size_human ?></span>.</p>
-		<p class="hint">Uploading a new photo will <span>replace</span> the current one.</p>
+		<p class="hint">Tamanho máximo do arquivo <span><?php echo $max_size_human ?></span>.</p>
+		<p class="hint">Enviar uma nova foto <span> substituirá </span> a atual</p>
 	</p>
 
 	<?php
@@ -153,7 +153,7 @@ echo form_open_multipart('rooms/save', array('class' => 'cssform', 'id' => 'room
 	<?php if (isset($room) && ! empty($room->photo)): ?>
 
 	<p>
-		<label for="photo_delete">Delete photo?</label>
+		<label for="photo_delete">Excluir foto?</label>
 		<?php
 		$field = 'photo_delete';
 		echo form_hidden($field, '0');
@@ -165,7 +165,7 @@ echo form_open_multipart('rooms/save', array('class' => 'cssform', 'id' => 'room
 			'checked' => FALSE,
 		));
 		?>
-		<p class="hint">Tick this box to <span>remove the current photo</span> without adding a new one.</p>
+		<p class="hint">Marque esta caixa para <span> remover a foto atual </span> sem adicionar uma nova.</p>
 	</p>
 
 	<?php endif; ?>
@@ -248,8 +248,8 @@ echo form_open_multipart('rooms/save', array('class' => 'cssform', 'id' => 'room
 <?php
 
 $this->load->view('partials/submit', array(
-	'submit' => array('Save', tab_index()),
-	'cancel' => array('Cancel', tab_index(), 'rooms'),
+	'submit' => array('Salvar', tab_index()),
+	'cancel' => array('Cancelar', tab_index(), 'rooms'),
 ));
 
 echo form_close();
