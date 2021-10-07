@@ -1,6 +1,6 @@
 <fieldset><legend accesskey="D" tabindex="6">Week Dates</legend>
 
-<div>Selecione as datas de início da semana (segunda-feira) dentro do Ano útil atual a que se aplica esta semana.</div>
+<div>Selecione as datas de início da semana (segunda-feira) dentro da legislatura atual a que se aplica esta semana.</div>
 
 <?php
 /*

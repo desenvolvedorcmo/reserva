@@ -7,7 +7,7 @@ if (isset($field) && is_object($field)) {
 echo "<!-- $field_id -->";
 
 if ( ! empty($field_id)) {
-	echo msgbox('exclamation', 'You cannot change the type of a field. Instead, delete the field and create a new one.');
+	echo msgbox('exclamation', 'Você não pode alterar o tipo de um campo. Em vez disso, exclua o campo e crie um novo.');
 }
 
 echo form_open('rooms/save_field', array('class' => 'cssform', 'id' => 'fields_add'), array('field_id' => $field_id));
@@ -17,7 +17,7 @@ echo form_open('rooms/save_field', array('class' => 'cssform', 'id' => 'fields_a
 
 <fieldset>
 
-	<legend accesskey="F" tabindex="<?= tab_index() ?>">Detalhes do campo</legend>
+	<legend accesskey="F" tabindex="<?= tab_index() ?>">Detalhes do Campo</legend>
 
 	<p>
 		<label for="name" class="required">Nome</label>
@@ -107,7 +107,7 @@ echo form_open('rooms/save_field', array('class' => 'cssform', 'id' => 'fields_a
 				'tabindex' => tab_index(),
 				'value' => $options_str,
 			));
-			?><p class="hint">Enter the selectable options for the dropdown list here; one on each line.</p>
+			?><p class="hint">Insira as opções selecionáveis ​​para a lista aqui; um em cada linha.</p>
 		</p>
 		<?php echo form_error($input_name); ?>
 	</div>

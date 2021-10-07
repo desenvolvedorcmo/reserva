@@ -4,7 +4,7 @@ echo $this->session->flashdata('saved');
 
 $iconbar = iconbar(array(
 	array('rooms/add', 'Adicionar Item', 'add.png'),
-	array('rooms/fields', 'Campos personalizados', 'room_fields.png'),
+	array('rooms/fields', 'Campos Personalizados', 'room_fields.png'),
 ));
 
 echo $iconbar;

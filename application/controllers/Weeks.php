@@ -31,7 +31,7 @@ class Weeks extends MY_Controller
 		$this->data['academicyear'] = $this->weeks_model->GetAcademicYear();
 
 		if ( ! $this->data['academicyear']) {
-			$this->data['body'] = msgbox('warning', "Por favor, configure seu ano útil primeiro.");
+			$this->data['body'] = msgbox('warning', "Por favor, configure a legislatura primeiro.");
 		} else {
 			$this->data['body'] = '';
 		}
@@ -200,7 +200,7 @@ class Weeks extends MY_Controller
 	 		$this->data['academicyear']->date_end = date("Y-m-d", strtotime("+1 Year", strtotime(date("Y-m-d"))));
 	 	}
 
-	 	$this->data['title'] = 'Ano útil';
+	 	$this->data['title'] = 'Legislatura';
 	 	$this->data['showtitle'] = $this->data['title'];
 	 	$this->data['body'] = $this->load->view('weeks/weeks_academicyear', $this->data, True);
 
@@ -231,7 +231,7 @@ class Weeks extends MY_Controller
 
  		$this->weeks_model->SaveAcademicYear($year_data);
 
- 		$this->session->set_flashdata('saved', msgbox('info', 'As datas do ano útil foram atualizadas.'));
+ 		$this->session->set_flashdata('saved', msgbox('info', 'As datas da legislatura foram atualizadas.'));
 
 	 	redirect('weeks/academicyear');
 	 }

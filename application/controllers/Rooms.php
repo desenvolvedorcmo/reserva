@@ -27,13 +27,13 @@ class Rooms extends MY_Controller
 	function info($room_id = NULL)
 	{
 		if (empty($room_id)) {
-			show_error('No room to show');
+			show_error('Nenhum item para mostrar');
 		}
 
 		$this->data['room'] = $this->rooms_model->Get($room_id);
 
 		if (empty($this->data['room'])) {
-			show_error("The requested room could not be found.");
+			show_error("O item solicitado não foi encontrado.");
 		}
 
 		$this->load->library('table');
@@ -55,13 +55,13 @@ class Rooms extends MY_Controller
 	public function photo($room_id = NULL)
 	{
 		if (empty($room_id)) {
-			show_error('Não há nem uma sala!');
+			show_error('Não há nenhum item!');
 		}
 
 		$room = $this->rooms_model->Get($room_id);
 
 		if (empty($room)) {
-			show_error("The requested room could not be found.");
+			show_error("O item solicitado não foi encontrado.");
 		}
 
 		if ( ! strlen($room->photo)) {
@@ -94,7 +94,7 @@ class Rooms extends MY_Controller
 
 		$this->data['rooms'] = $this->rooms_model->Get();
 
-		$this->data['title'] = 'Itens para reserva';
+		$this->data['title'] = 'Itens para Reserva';
 		$this->data['showtitle'] = $this->data['title'];
 		$this->data['body'] = $this->load->view('rooms/rooms_index', $this->data, TRUE);
 
@@ -117,7 +117,7 @@ class Rooms extends MY_Controller
 		$this->data['fields'] = $this->rooms_model->GetFields();
 		$this->data['fieldvalues'] = array();
 
-		$this->data['title'] = 'Adicionar sala';
+		$this->data['title'] = 'Adicionar Item';
 		$this->data['showtitle'] = $this->data['title'];
 
 		$columns = array(
@@ -404,7 +404,7 @@ class Rooms extends MY_Controller
 
 		$this->data['options_list'] = $this->rooms_model->options;
 		$this->data['fields'] = $this->rooms_model->GetFields();
-		$this->data['title'] = 'Campo de salas';
+		$this->data['title'] = 'Campo de Salas';
 		$this->data['showtitle'] = 'Campos Personalizados';
 		$this->data['body'] = $this->load->view('rooms/fields/index', $this->data, TRUE);
 
@@ -421,7 +421,7 @@ class Rooms extends MY_Controller
 
 		$this->data['options_list'] = $this->rooms_model->options;
 
-		$this->data['title'] = 'Adicionar campo';
+		$this->data['title'] = 'Adicionar Campo';
 		$this->data['showtitle'] = $this->data['title'];
 
 		$columns = array(
@@ -502,10 +502,10 @@ class Rooms extends MY_Controller
 
 		if (empty($field_id)) {
 			$field_id = $this->rooms_model->field_add($field_data);
-			$flashmsg = msgbox('info', "The {$field_data['name']} field has been added.");
+			$flashmsg = msgbox('info', "O Campo {$field_data['name']} foi adicionado.");
 		} else {
 			$this->rooms_model->field_edit($field_id, $field_data);
-			$flashmsg = msgbox('info', "The {$field_data['name']} field has been updated.");
+			$flashmsg = msgbox('info', "O Campo {$field_data['name']} foi atualizado.");
 		}
 
 		$this->session->set_flashdata('saved', $flashmsg, TRUE);
@@ -535,7 +535,7 @@ class Rooms extends MY_Controller
 		$this->data['cancel'] = 'rooms/fields';
 
 		$row = $this->rooms_model->GetFields($id);
-		$this->data['title'] = 'Deletar campo ('.html_escape($row->name).')';
+		$this->data['title'] = 'Deletar Campo ('.html_escape($row->name).')';
 		$this->data['showtitle'] = $this->data['title'];
 		$this->data['body'] = $this->load->view('partials/deleteconfirm', $this->data, TRUE);
 

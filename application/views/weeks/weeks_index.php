@@ -4,7 +4,7 @@ echo $this->session->flashdata('saved');
 
 $iconbar = iconbar(array(
 	array('weeks/add', 'Adicionar semana', 'add.png'),
-	array('weeks/academicyear', 'Ano acadêmico', 'school_manage_weeks_academicyear.png'),
+	array('weeks/academicyear', 'Legislatura', 'school_manage_weeks_academicyear.png'),
 ));
 
 echo $iconbar;

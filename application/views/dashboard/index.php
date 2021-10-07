@@ -34,7 +34,7 @@ $school[$i]['icon'] = 'school_manage_times.png';
 $school[$i]['href'] = site_url('periods');
 
 $i++;
-$school[$i]['text'] = 'Ciclo da semana';
+$school[$i]['text'] = 'Ciclo da Semana';
 $school[$i]['icon'] = 'school_manage_weeks.png';
 $school[$i]['href'] = site_url('weeks');
 
@@ -44,7 +44,7 @@ $school[$i]['icon'] = 'school_manage_holidays.png';
 $school[$i]['href'] = site_url('holidays');
 
 $i++;
-$school[$i]['text'] = 'Itens para reserva';
+$school[$i]['text'] = 'Itens para Reserva';
 $school[$i]['icon'] = 'school_manage_rooms.png';
 $school[$i]['href'] = site_url('rooms');
 

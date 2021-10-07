@@ -73,7 +73,7 @@ echo form_open('weeks/save', array('class' => 'cssform', 'id' => 'week_add'), ar
 
 	<legend accesskey="D" tabindex="6">Datas da semana</legend>
 
-	<div>Selecione as datas de início da semana (segunda-feira) dentro do ano acadêmico atual a que se aplica esta semana.</div>
+	<div>Selecione as datas de início da semana (segunda-feira) dentro da legislaturao atual a que se aplica esta semana.</div>
 
 	<?php
 

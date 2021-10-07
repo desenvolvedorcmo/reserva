@@ -3,8 +3,8 @@
 echo $this->session->flashdata('saved');
 
 $iconbar = iconbar(array(
-	array('rooms/add_field', 'Adicionar campo', 'add.png'),
-	array('rooms', 'itens', 'school_manage_rooms.png'),
+	array('rooms/add_field', 'Adicionar Campo', 'add.png'),
+	array('rooms', 'Itens', 'school_manage_rooms.png'),
 ));
 
 echo $iconbar;

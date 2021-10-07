@@ -13,7 +13,7 @@ echo form_open('weeks/saveacademicyear', array('class' => 'cssform', 'id' => 'sa
 
 <fieldset style="width:50%">
 
-	<legend accesskey="A" tabindex="<?= tab_index() ?>">Ano útil</legend>
+	<legend accesskey="A" tabindex="<?= tab_index() ?>">Legislatura</legend>
 
 	<p>
 		<label for="date_start" class="required">Data de início:</label>

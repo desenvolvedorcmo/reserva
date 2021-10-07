@@ -10,7 +10,7 @@ echo form_open_multipart('rooms/save', array('class' => 'cssform', 'id' => 'room
 
 <fieldset>
 
-	<legend accesskey="R" tabindex="<?php echo tab_index() ?>">Detalhes do item</legend>
+	<legend accesskey="R" tabindex="<?php echo tab_index() ?>">Detalhes do Item</legend>
 
 	<p>
 		<label for="name" class="required">Nome</label>
@@ -104,7 +104,7 @@ echo form_open_multipart('rooms/save', array('class' => 'cssform', 'id' => 'room
 	<legend accesskey="P" tabindex="7">Foto</legend>
 
 	<br>
-	<div>Adicione uma foto da sala/Item que os usuários poderão ver.</div>
+	<div>Adicione uma foto da Sala/Item que os usuários poderão ver.</div>
 	<br>
 
 	<p>
@@ -177,7 +177,7 @@ echo form_open_multipart('rooms/save', array('class' => 'cssform', 'id' => 'room
 
 <fieldset>
 
-	<legend accesskey="F" tabindex="<?php echo tab_index() ?>">Fields</legend>
+	<legend accesskey="F" tabindex="<?php echo tab_index() ?>">Campos Adicionais</legend>
 
 	<?php
 
