@@ -1,7 +1,7 @@
 <?php
 $url = site_url("rooms/info/{$room_id}");
 $name = html_escape($name);
-$link = "<a href='{$url}' up-drawer='.room-info' up-history='false' up-tooltip='View room details' up-preload>{$name}</a>";
+$link = "<a href='{$url}' up-drawer='.room-info' up-history='false' up-tooltip='Ver detalhes da sala' up-preload>{$name}</a>";
 // $link = "<a href='{$url}' up-position='right' up-align='center' up-popup='.room-info' up-history='false' up-preload>{$name}</a>";
 ?>
 

@@ -472,7 +472,7 @@ class Bookings_model extends CI_Model
 			$week_bar['style'] = sprintf('padding:6px 3px;font-weight:bold;background:#%s;color:#%s', 'dddddd', '000');
 			$html .= $this->load->view('bookings/week_bar', $week_bar, TRUE);
 			// Notify user no timetable week is available
-			$html .= msgbox('error', 'No timetable week has been configured for this selection.');
+			$html .= msgbox('error', 'Nenhuma semana/horário foi configurada para esta seleção.');
 			// Flag error to stop output before table
 			$err = TRUE;
 
@@ -599,7 +599,7 @@ class Bookings_model extends CI_Model
 		}
 
 		if (empty($periods)) {
-			$html .= msgbox('error', 'N&atilde;o existe per&iacute;odo cadastrado para essa reserva.');
+			$html .= msgbox('error', 'Não existe período cadastrado para essa reserva.');
 			$err = TRUE;
 		}
 

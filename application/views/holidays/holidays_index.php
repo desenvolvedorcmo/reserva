@@ -37,7 +37,7 @@ $sort_cols = ["Name", "StartDate", "EndDate", "None"];
 		if(strtotime($holiday->date_start) != strtotime($holiday->date_end)){
 			echo timespan(strtotime($holiday->date_start), strtotime($holiday->date_end) + (3600*24));
 		} else {
-			echo "1 Day";
+			echo "1 Dia";
 		}
 		?></td>
 		<td width="45" class="n"><?php

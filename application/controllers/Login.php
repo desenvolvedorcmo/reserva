@@ -70,7 +70,7 @@ class Login extends MY_Controller
 			// Success! Redirect to control panel
 			redirect('');
 		} else {
-			$this->session->set_flashdata('auth', msgbox('error', 'Incorrect username and/or password.'));
+			$this->session->set_flashdata('auth', msgbox('error', 'Senha e/ou Usuário Incorreto.'));
 			return $this->index();
 		}
 	}

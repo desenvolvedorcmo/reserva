@@ -243,7 +243,7 @@ class Bookings extends MY_Controller
 				$messages = [];
 
 				if ( ! $booking_status->in_quota) {
-					$msg = "You have reached the maximum number of active bookings (%d).";
+					$msg = "Você atingiu o número máximo de reservas ativas (%d).";
 					$msg = sprintf($msg, setting('num_max_bookings'));
 					$messages[] = msgbox('error', $msg);
 				}
@@ -254,7 +254,7 @@ class Bookings extends MY_Controller
 				}
 
 				if ( ! $booking_status->date_in_range) {
-					$msg = "The chosen date must be less than %d days in the future.";
+					$msg = "A data escolhida deve ser inferior a %d dias no futuro.";
 					$msg = sprintf($msg, setting('bia'));
 					$messages[] = msgbox('error', $msg);
 				}
@@ -315,9 +315,9 @@ class Bookings extends MY_Controller
 		}
 
 		if ($errcount > 0) {
-			$flashmsg = msgbox('error', 'One or more bookings could not be made.');
+			$flashmsg = msgbox('error', 'Uma ou mais reservas não puderam ser feitas.');
 		} else {
-			$flashmsg = msgbox('info', 'The bookings were created successfully.');
+			$flashmsg = msgbox('info', 'Você não tem os privilégios corretos para cancelar esta reserva.');
 		}
 
 		$this->session->set_userdata('notes', $booking_data['notes']);
@@ -349,14 +349,14 @@ class Bookings extends MY_Controller
 					);
 
 		if ( ! $can_delete) {
-			$this->session->set_flashdata('saved', msgbox('error', "You do not have the correct privileges to cancel this booking."));
+			$this->session->set_flashdata('saved', msgbox('error', "Você não tem os privilégios corretos para cancelar esta reserva."));
 			return redirect($uri);
 		}
 
 		if ($this->bookings_model->Cancel($id)){
-			$msg = msgbox('info', 'The booking has been cancelled.');
+			$msg = msgbox('info', 'A reserva foi cancelada.');
 		} else {
-			$msg = msgbox('error', 'An error occured cancelling the booking.');
+			$msg = msgbox('error', 'Ocorreu um erro ao cancelar a reserva.');
 		}
 
 		$this->session->set_flashdata('saved', $msg);
@@ -376,7 +376,7 @@ class Bookings extends MY_Controller
 		$can_edit = ( $this->userauth->is_level(ADMINISTRATOR) OR ($this->userauth->user->user_id == $booking->user_id));
 
 		if ( ! $can_edit) {
-			$this->session->set_flashdata('saved', msgbox('error', "You do not have the correct privileges to cancel this booking."));
+			$this->session->set_flashdata('saved', msgbox('error', "Você não tem os privilégios corretos para cancelar esta reserva."));
 			return redirect($uri);
 		}
 
@@ -453,7 +453,7 @@ class Bookings extends MY_Controller
 		if ($this->_check_unique_booking($booking_data)) {
 			$this->_persist_booking($booking_id, $booking_data);
 		} else {
-			$flashmsg = msgbox('exclamation', "There is already a booking for that date, period and room.");
+			$flashmsg = msgbox('exclamation', "Já existe uma reserva para essa data, período e Item.");
 			$this->data['notice'] = $flashmsg;
 			// $this->session->set_flashdata('saved', $flashmsg);
 			return (empty($booking_id) ? $this->book() : $this->edit($booking_id));
@@ -515,7 +515,7 @@ class Bookings extends MY_Controller
 			$booking_id = $this->bookings_model->Add($booking_data);
 
 			if ($booking_id) {
-				$flashmsg = msgbox('info', "The booking has been made.");
+				$flashmsg = msgbox('info', "A reserva foi feita.");
 			} else {
 				$line = sprintf($this->lang->line('crbs_action_dberror'), 'adding');
 				$flashmsg = msgbox('error', $line);
@@ -524,7 +524,7 @@ class Bookings extends MY_Controller
 		} else {
 
 			if ($this->bookings_model->Edit($booking_id, $booking_data)) {
-				$flashmsg = msgbox('info', "The booking has been updated.");
+				$flashmsg = msgbox('info', "A reserva foi atualizada.");
 			} else {
 				$line = sprintf($this->lang->line('crbs_action_dberror'), 'editing');
 				$flashmsg = msgbox('error', $line);
