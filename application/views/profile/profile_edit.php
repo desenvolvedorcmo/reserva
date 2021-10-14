@@ -10,7 +10,7 @@ echo form_open('profile/save', array('class' => 'cssform', 'id' => 'profile_edit
 	<legend accesskey="U" tabindex="<?php tab_index() ?>">Informaç&otilde;es do usu&aacute;rio</legend>
 
 	<p>
-	  <label for="email" class="required">Emai-l</label>
+	  <label for="email" class="required">E-mail</label>
 	  <?php
 		$email = set_value('email', $user->email, FALSE);
 		echo form_input(array(

@@ -67,7 +67,7 @@ class Users extends MY_Controller
 	{
 		$this->data['departments'] = $this->departments_model->Get(NULL, NULL, NULL);
 
-		$this->data['title'] = 'Adicionar usuario';
+		$this->data['title'] = 'Adicionar Usuário';
 		$this->data['showtitle'] = $this->data['title'];
 
 		$columns = array(
