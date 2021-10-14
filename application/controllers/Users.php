@@ -137,23 +137,23 @@ class Users extends MY_Controller
 		$this->load->library('form_validation');
 
 		$this->form_validation->set_rules('user_id', 'ID', 'integer');
-		$this->form_validation->set_rules('username', 'Username', 'required|max_length[32]|regex_match[/^[A-Za-z0-9-_.@]+$/]');
+		$this->form_validation->set_rules('username', 'Usuário', 'required|max_length[32]|regex_match[/^[A-Za-z0-9-_.@]+$/]');
 		$this->form_validation->set_rules('authlevel', 'Type', 'required|integer');
 		$this->form_validation->set_rules('enabled', 'Enabled', 'required|integer');
-		$this->form_validation->set_rules('email', 'Email address', 'valid_email|max_length[255]');
+		$this->form_validation->set_rules('email', 'Email', 'valid_email|max_length[255]');
 
 		if (empty($user_id)) {
-			$this->form_validation->set_rules('password1', 'Password', 'trim|required');
-			$this->form_validation->set_rules('password2', 'Password (confirm)', 'trim|matches[password1]');
+			$this->form_validation->set_rules('password1', 'Senha', 'trim|required');
+			$this->form_validation->set_rules('password2', 'Senha (Confirmar)', 'trim|matches[password1]');
 		} else {
 			if ($this->input->post('password1')) {
-				$this->form_validation->set_rules('password1', 'Password', 'trim');
-				$this->form_validation->set_rules('password2', 'Password (confirm)', 'trim|matches[password1]');
+				$this->form_validation->set_rules('password1', 'Senha', 'trim');
+				$this->form_validation->set_rules('password2', 'Senha (Confirmar)', 'trim|matches[password1]');
 			}
 		}
 
-		$this->form_validation->set_rules('firstname', 'First name', 'max_length[20]');
-		$this->form_validation->set_rules('lastname', 'Last name', 'max_length[20]');
+		$this->form_validation->set_rules('firstname', 'Primeiro Nome', 'max_length[20]');
+		$this->form_validation->set_rules('lastname', 'Ultimo Nome', 'max_length[20]');
 		$this->form_validation->set_rules('displayname', 'Display name', 'max_length[20]');
 		$this->form_validation->set_rules('department_id', 'Department', 'integer');
 		$this->form_validation->set_rules('ext', 'Extension', 'max_length[10]');

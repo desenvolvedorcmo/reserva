@@ -46,7 +46,7 @@ class Authentication extends MY_Controller
 			$body .= $this->load->view('columns', $columns, TRUE);
 
 		} else {
-			$body = msgbox('error', 'The PHP LDAP module is not installed or enabled.');
+			$body = msgbox('error', 'O módulo PHP LDAP não está instalado ou habilitado.');
 		}
 
 		$this->data['body'] = '<h2>LDAP</h2>' . $body;

@@ -75,7 +75,7 @@ $admin[$i]['icon'] = 'school_manage_settings.png';
 $admin[$i]['href'] = site_url('settings/general');
 
 $i++;
-$admin[$i]['text'] = 'Authentication';
+$admin[$i]['text'] = 'Autenticação';
 $admin[$i]['icon'] = 'lock.png';
 $admin[$i]['href'] = site_url('settings/authentication/ldap');
 

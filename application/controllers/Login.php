@@ -51,8 +51,8 @@ class Login extends MY_Controller
 		log_message('debug', 'login submit');
 
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('username', 'Username', 'required');
-		$this->form_validation->set_rules('password', 'Password', 'required');
+		$this->form_validation->set_rules('username', 'Usuário', 'required');
+		$this->form_validation->set_rules('password', 'Senha', 'required');
 
 		// Run validation
 		if ($this->form_validation->run() == FALSE) {

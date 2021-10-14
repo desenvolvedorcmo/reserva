@@ -24,7 +24,7 @@ class General extends MY_Controller
 			$this->save_settings();
 		}
 
-		$this->data['title'] = 'Settings';
+		$this->data['title'] = 'Configurações';
 		$this->data['showtitle'] = $this->data['title'];
 		$this->data['body'] = $this->load->view('settings/general', $this->data, TRUE);
 
@@ -45,19 +45,19 @@ class General extends MY_Controller
 		$this->load->library('image_lib');
 
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('bia', 'Booking in advance', 'max_length[3]|numeric');
-		$this->form_validation->set_rules('num_max_bookings', 'Maximum number of bookings', 'max_length[3]|numeric');
-		$this->form_validation->set_rules('displaytype', 'Display type', 'required');
-		$this->form_validation->set_rules('d_columns', 'Display columns', 'callback__valid_columns');
-		$this->form_validation->set_rules('date_format_long', 'Long date format', 'required|max_length[15]');
-		$this->form_validation->set_rules('date_format_weekday', 'Weekday date format', 'max_length[15]');
-		$this->form_validation->set_rules('time_format_period', 'Period time format', 'max_length[15]');
-		$this->form_validation->set_rules('bookings_show_user_single', 'User display (single)', 'is_natural');
-		$this->form_validation->set_rules('bookings_show_user_recurring', 'User display (recurring)', 'is_natural');
-		$this->form_validation->set_rules('login_message_enabled', 'Login message', 'is_natural');
-		$this->form_validation->set_rules('login_message_text', 'Login message text', 'max_length[1024]');
-		$this->form_validation->set_rules('maintenance_mode', 'Maintenance mode', 'is_natural');
-		$this->form_validation->set_rules('maintenance_mode_message', 'Maintenance mode message', 'max_length[1024]');
+		$this->form_validation->set_rules('bia', 'Reserva com antecedência', 'max_length[3]|numeric');
+		$this->form_validation->set_rules('num_max_bookings', 'Número máximo de reservas', 'max_length[3]|numeric');
+		$this->form_validation->set_rules('displaytype', 'Tipo de exibição', 'required');
+		$this->form_validation->set_rules('d_columns', 'Colunas de exibição', 'callback__valid_columns');
+		$this->form_validation->set_rules('date_format_long', 'Formato de data longo', 'required|max_length[15]');
+		$this->form_validation->set_rules('date_format_weekday', 'Formato de dia da semana', 'max_length[15]');
+		$this->form_validation->set_rules('time_format_period', 'Formato de tempo do período', 'max_length[15]');
+		$this->form_validation->set_rules('bookings_show_user_single', 'Exibição do usuário (individual)', 'is_natural');
+		$this->form_validation->set_rules('bookings_show_user_recurring', 'Exibição do usuário (recorrente)', 'is_natural');
+		$this->form_validation->set_rules('login_message_enabled', 'Mensagem de login', 'is_natural');
+		$this->form_validation->set_rules('login_message_text', 'Texto da mensagem de login', 'max_length[1024]');
+		$this->form_validation->set_rules('maintenance_mode', 'Modo de manutenção', 'is_natural');
+		$this->form_validation->set_rules('maintenance_mode_message', 'Mensagem do modo de manutenção', 'max_length[1024]');
 
 		if ($this->form_validation->run() == FALSE) {
 			return FALSE;
@@ -89,7 +89,7 @@ class General extends MY_Controller
 
 		$this->settings_model->set($settings);
 
-		$this->session->set_flashdata('saved', msgbox('info', 'Settings have been updated.'));
+		$this->session->set_flashdata('saved', msgbox('info', 'As configurações foram atualizadas.'));
 
 		redirect('settings/general');
 	}
@@ -124,7 +124,7 @@ class General extends MY_Controller
 		}
 
 		if ($ret == FALSE) {
-			$this->form_validation->set_message('_valid_columns', 'The column you selected is incompatible with the display type.');
+			$this->form_validation->set_message('_valid_columns', 'A coluna que você selecionou é incompatível com o tipo de exibição.');
 		}
 
 		return $ret;

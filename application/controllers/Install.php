@@ -138,8 +138,8 @@ class Install extends MY_Controller
 
 			$this->form_validation->set_rules('hostname', 'Hostname', 'required');
 			$this->form_validation->set_rules('database', 'Database', 'required');
-			$this->form_validation->set_rules('username', 'Username', 'required');
-			$this->form_validation->set_rules('password', 'Password', 'required');
+			$this->form_validation->set_rules('username', 'Usuário', 'required');
+			$this->form_validation->set_rules('password', 'Senha', 'required');
 			$this->form_validation->set_rules('url', 'URL', 'required|valid_url');
 
 			if ($this->form_validation->run() == FALSE) {

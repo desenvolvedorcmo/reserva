@@ -182,7 +182,7 @@ echo form_open_multipart('users/save', array('class' => 'cssform', 'id' => 'user
 	<p>
 		<label for="department">Departamento</label>
 		<?php
-		$options = array('' => '(None)');
+		$options = array('' => '(Nenhum)');
 		if ($departments) {
 			foreach ($departments as $department) {
 				$options[$department->department_id] = html_escape($department->name);
