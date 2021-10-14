@@ -38,7 +38,7 @@ class Weeks extends MY_Controller
 
 		$this->data['body'] .= $this->load->view('weeks/weeks_index', $this->data, TRUE);
 
-		$this->data['title'] = 'Ciclo da semana do calendário';
+		$this->data['title'] = 'Ciclo da Semana do Calendário';
 		$this->data['showtitle'] = $this->data['title'];
 
 		return $this->render();
@@ -65,7 +65,7 @@ class Weeks extends MY_Controller
 		$this->data['weekscount'] = (is_array($this->data['weeks']) ? count($this->data['weeks']) : 0);
 
 		// Load view
-		$this->data['title'] = 'Adicionar semana';
+		$this->data['title'] = 'Adicionar Semana';
 		$this->data['showtitle'] = $this->data['title'];
 		$this->data['body'] = $this->load->view('weeks/weeks_add', $this->data, TRUE);
 
@@ -93,7 +93,7 @@ class Weeks extends MY_Controller
 		$this->data['academicyear'] = $this->weeks_model->GetAcademicYear();
 		$this->data['weekscount'] = count($this->data['weeks']);
 
-		$this->data['title'] = 'Editar semana';
+		$this->data['title'] = 'Editar Semana';
 		$this->data['showtitle'] = $this->data['title'];
 
 		$this->data['body'] = $this->load->view('weeks/weeks_add', $this->data, TRUE);
@@ -179,7 +179,7 @@ class Weeks extends MY_Controller
 		$this->data['text'] = 'Se você excluir esta semana, todas as reservas recorrentes anexadas a esta semana não estarão mais visíveis.';
 
 		$row = $this->weeks_model->Get($id);
-		$this->data['title'] = 'Deletar semana (' . html_escape($row->name) . ')';
+		$this->data['title'] = 'Deletar Semana (' . html_escape($row->name) . ')';
 		$this->data['showtitle'] = $this->data['title'];
 		$this->data['body'] = $this->load->view('partials/deleteconfirm', $this->data, TRUE);
 

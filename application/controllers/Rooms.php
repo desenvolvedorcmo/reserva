@@ -192,11 +192,11 @@ class Rooms extends MY_Controller
 		$this->load->library('form_validation');
 
 		$this->form_validation->set_rules('room_id', 'ID', 'integer');
-		$this->form_validation->set_rules('name', 'Name', 'required|min_length[1]|max_length[20]');
-		$this->form_validation->set_rules('user_id', 'User', 'integer');
-		$this->form_validation->set_rules('location', 'Location', 'max_length[40]');
-		$this->form_validation->set_rules('notes', 'Notes', 'max_length[255]');
-		$this->form_validation->set_rules('bookable', 'Bookable', 'integer');
+		$this->form_validation->set_rules('name', 'Nome', 'required|min_length[1]|max_length[20]');
+		$this->form_validation->set_rules('user_id', 'Usuário', 'integer');
+		$this->form_validation->set_rules('location', 'Local', 'max_length[40]');
+		$this->form_validation->set_rules('notes', 'Notas', 'max_length[255]');
+		$this->form_validation->set_rules('bookable', 'Reservável', 'integer');
 
 		if ($this->form_validation->run() == FALSE) {
 			return (empty($room_id) ? $this->add() : $this->edit($room_id));

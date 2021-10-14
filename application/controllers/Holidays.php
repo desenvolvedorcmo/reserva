@@ -104,7 +104,7 @@ class Holidays extends MY_Controller
 		$this->load->library('form_validation');
 
 		$this->form_validation->set_rules('holiday_id', 'ID', 'integer');
-		$this->form_validation->set_rules('name', 'Name', 'required|min_length[1]|max_length[30]');
+		$this->form_validation->set_rules('name', 'Nome', 'required|min_length[1]|max_length[30]');
 		$this->form_validation->set_rules('date_start', 'Start date', 'required|min_length[8]|max_length[10]');
 		$this->form_validation->set_rules('date_end', 'End date', 'required|min_length[8]|max_length[10]');;
 

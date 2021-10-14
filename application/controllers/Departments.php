@@ -99,8 +99,8 @@ class Departments extends MY_Controller
 		$this->load->library('form_validation');
 
 		$this->form_validation->set_rules('department_id', 'ID', 'integer');
-		$this->form_validation->set_rules('name', 'Name', 'required|min_length[1]|max_length[50]');
-		$this->form_validation->set_rules('description', 'Description', 'max_length[255]');
+		$this->form_validation->set_rules('name', 'Nome', 'required|min_length[1]|max_length[50]');
+		$this->form_validation->set_rules('description', 'Descrição', 'max_length[255]');
 
 		if ($this->form_validation->run() == FALSE) {
 			return (empty($department_id) ? $this->add() : $this->edit($department_id));
