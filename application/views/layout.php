@@ -18,7 +18,7 @@ if ($this->userauth->logged_in()) {
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Craig A Rodway">
-	<title><?= html_escape($title) ?> | classroombookings</title>
+	<title><?= html_escape($title) ?> | Reservas CMO</title>
 	<link rel="stylesheet" type="text/css" media="screen" href="<?= base_url('assets/style.css') ?>">
 	<link rel="stylesheet" type="text/css" media="print" href="<?= base_url('assets/print.css') ?>">
 	<link rel="stylesheet" type="text/css" media="screen" href="<?= base_url('assets/sorttable.css') ?>">
@@ -124,8 +124,8 @@ if ($this->userauth->logged_in()) {
 				?>
 				<br /><br />
 				<span style="font-size:90%;color:#678; line-height: 2">
-					<a href="https://www.classroombookings.com/" target="_blank">classroombookings</a> version <?= VERSION ?>.
-					&copy; <?= date('Y') ?> Craig A Rodway.
+					<!--  <a href="https://www.classroombookings.com/" target="_blank">classroombookings</a> version <?= VERSION ?>.-->
+					&copy; <?= date('Y') ?> Câmara Municipal de Ourinhos.
 					<br />
 					Tempo de carregamento: <?php echo $this->benchmark->elapsed_time() ?> segundos.
 				</span>

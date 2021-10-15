@@ -24,11 +24,11 @@ foreach($myroom as $booking){
 
 
 <?php if($mybookings){ ?>
-<h3>My bookings</h3>
+<h3>Minhas reservas</h3>
 <ul>
 <?php
 foreach($mybookings as $booking){
-	$string = '<li>%s is booked on %s for %s. %s.</li>';
+    $string = '<li>%s está reservada(o) para o dia %s.</li>';//for %s. %s
 	$notes = '';
 	if($booking->notes){ $notes = '('. $booking->notes.')'; }
 	echo sprintf($string, html_escape($booking->name), date("d/m/Y", strtotime($booking->date)), html_escape($booking->periodname), html_escape($notes));
