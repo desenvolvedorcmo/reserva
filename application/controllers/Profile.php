@@ -72,11 +72,11 @@ class Profile extends MY_Controller
 		$user_id = $this->userauth->user->user_id;
 
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('password1', 'Password', 'min_length[6]');
-		$this->form_validation->set_rules('password2', 'Password (confirm)', 'min_length[6]|matches[password1]');
-		$this->form_validation->set_rules('email', 'Email address', 'max_length[255]|valid_email');
-		$this->form_validation->set_rules('firstname', 'First name', 'max_length[20]');
-		$this->form_validation->set_rules('lastname', 'Last name', 'max_length[20]');
+		$this->form_validation->set_rules('password1', 'Senha', 'min_length[6]');
+		$this->form_validation->set_rules('password2', 'Senha (Confirmar)', 'min_length[6]|matches[password1]');
+		$this->form_validation->set_rules('email', 'Email', 'max_length[255]|valid_email');
+		$this->form_validation->set_rules('firstname', 'Primeiro nome', 'max_length[20]');
+		$this->form_validation->set_rules('lastname', 'Ultimo nome', 'max_length[20]');
 		$this->form_validation->set_rules('displayname', 'Display name', 'max_length[20]');
 		$this->form_validation->set_rules('extension', 'Extension', 'max_length[10]');
 
@@ -104,7 +104,7 @@ class Profile extends MY_Controller
 
 		// Now call database to update user and load appropriate message for return value
 		if ( ! $this->crud_model->Edit('users', 'user_id', $user_id, $data)) {
-			$flashmsg = msgbox('error', 'A database error occured while updating your details.');
+			$flashmsg = msgbox('error', 'Ocorreu um erro no banco de dados ao atualizar seus detalhes.');
 		} else {
 			$flashmsg = msgbox('info', 'Seus detalhes foram alterados com sucesso.');
 		}

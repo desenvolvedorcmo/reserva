@@ -98,7 +98,7 @@ class CI_Cache_memcached extends CI_Driver {
 		}
 		else
 		{
-			log_message('error', 'Cache: Failed to create Memcache(d) object; extension not loaded?');
+			log_message('error', 'Cache: Falha ao criar objeto Memcache(d); extensão não carregada?');
 			return;
 		}
 

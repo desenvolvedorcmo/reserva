@@ -100,7 +100,7 @@ class CI_Cache_redis extends CI_Driver
 	{
 		if ( ! $this->is_supported())
 		{
-			log_message('error', 'Cache: Failed to create Redis object; extension not loaded?');
+			log_message('error', 'Cache: Falha ao criar objeto Redis; extensão não carregada?');
 			return;
 		}
 
@@ -134,17 +134,17 @@ class CI_Cache_redis extends CI_Driver
 
 			if ( ! $success)
 			{
-				log_message('error', 'Cache: Redis connection failed. Check your configuration.');
+				log_message('error', 'Cache: Falha na conexão do Redis. Verifique sua configuração.');
 			}
 
 			if (isset($config['password']) && ! $this->_redis->auth($config['password']))
 			{
-				log_message('error', 'Cache: Redis authentication failed.');
+				log_message('error', 'Cache: A autenticação do Redis falhou.');
 			}
 		}
 		catch (RedisException $e)
 		{
-			log_message('error', 'Cache: Redis connection refused ('.$e->getMessage().')');
+			log_message('error', 'Cache: Conexão Redis recusada ('.$e->getMessage().')');
 		}
 	}
 

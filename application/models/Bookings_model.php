@@ -251,7 +251,7 @@ class Bookings_model extends CI_Model
 			{
 				$book_url = site_url($url);
 				$cell['class'] = 'free';
-				$cell['body'] = '<a href="'.$book_url.'"><img src="' . base_url('assets/images/ui/accept.png') . '" width="16" height="16" alt="Book" title="Book" hspace="4" align="absmiddle" />Reservar</a>';
+				$cell['body'] = '<a href="'.$book_url.'"><img src="' . base_url('assets/images/ui/accept.png') . '" width="16" height="16" alt="Book" title="Reservar" hspace="4" align="absmiddle" />Reservar</a>';
 				if ($booking_status->is_admin)
 				{
 					$cell['body'] .= '<input type="checkbox" name="recurring[]" value="'.$url.'" />';
