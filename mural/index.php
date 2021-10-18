@@ -59,12 +59,28 @@
 <?php // 15/10 Note: Postar recado com o usuario logado e printar o NOME do usuario  ?>
 				<h1>Mural de Recados</h1>
 
+
+<form method="post" action="envia.php">
 			<div class="form-group">
-						<label for="exampleInputEmail1">Deixe seu Recado:</label>
-						<textarea  name="recado" class="form-control" rows="3"></textarea>
+						<label for="eaedanilo1@gmail.com">Deixe seu Recado: </label>
+						<textarea <input type="text" name="recado" class="form-control" rows="3"></textarea>
+					 
+					 <?php 
+					$agora = new DateTime();
+					$agora->format('yyyy-mmm-dd hh:mm:ss.s');
+					 echo $agora;
+					 ?>
+
+						
+						<input type="hidden" name="id_usuario" value=<?php echo $rows ['user_id'];?> >
+						
 					</div>
 					<input type="submit" class="btn btn-danger" value="Enviar">
 				</form>
+
+
+
+
 				
 				<h2>Recados</h2>
 				<?php
