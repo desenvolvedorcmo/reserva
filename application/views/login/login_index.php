@@ -47,7 +47,6 @@ echo form_open('login/submit', array('id'=>'login','class'=>'cssform'), array('p
 
 </fieldset>
 
-
 <?php
 
 $this->load->view('partials/submit', array(
@@ -55,3 +54,43 @@ $this->load->view('partials/submit', array(
 ));
 
 echo form_close();
+?>
+
+<?php // RECADOS
+	$servidor = "localhost";
+	$usuario = "root";
+	$senha = "123";
+	$dbname = "reserva";
+	//Criar a conexao
+	$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+	?>		
+
+<!DOCTYPE html>
+<html>
+<head>
+	<h2>Recados</h2>
+				<?php
+					$result_recado_bd = "SELECT * FROM recados";
+					$resultado_recado_bd = mysqli_query($conn, $result_recado_bd);
+					if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
+						echo "Nenhum recado...";
+					}else{
+						while($rows = mysqli_fetch_assoc($resultado_recado_bd)){
+							?>							
+							<div class="media">
+								<div class="media-body">
+									<h4 class="media-heading"><?php echo $rows['nome']; ?></h4>
+									<?php echo $rows['recado']; ?>
+								</div>
+							</div>
+							<?php
+						}
+					}
+				?>				
+</head>
+<body>
+
+
+
+</body>
+</html>

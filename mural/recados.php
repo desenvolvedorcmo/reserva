@@ -33,7 +33,7 @@
 		?>
 		<div class="container theme-showcase" role="main">
 			<div class="page-header">
-
+<center><a href="http://localhost/reserva/index.php/"> Voltar ao Inicio! </a></center>
 
 <?php
 //"Relacionando tabelas USER e recados"
@@ -48,41 +48,18 @@
 						$resultado_id = mysqli_query($conn, "SELECT * FROM users INNER JOIN recados ON(users.user_id=recados.user_id) WHERE users.user_id");
 						$rowUser = mysqli_fetch_array($resultado_id);
 			
-				?>			
+				?>		
+
+
+
+
+
 <?php //Printando nome do usuario  ?>
 				<div class="media">
 								<div class="media-body">
-									 <h class="media-heading"> Você está conectado como: </h> <strong> <?php echo $rows ['nome']; ?> </strong>
+									 <h class="media-heading"> </h> Olá, <strong><?php echo $rows ['nome']; ?></strong> seu recado foi enviado com <strong><font color="#008000">sucesso!</font></strong>
 								</div>
 							</div>	
-
-<?php // 15/10 Note: Postar recado com o usuario logado e printar o NOME do usuario  ?>
-				<h1>Mural de Recados</h1>
-
-
-<form method="post" action="envia.php">
-			<div class="form-group">
-						<label for="eaedanilo1@gmail.com">Deixe seu Recado: </label>
-						
-						<input type="hidden" name="nome" value=<?php echo $rows ['nome'];?> >
-						<input type="hidden" name="email" value=<?php echo $rows ['email'];?> >
-						<textarea <input type="text" name="recado" class="form-control" rows="3"></textarea>
-					 
-					 <?php //pegando horario
-					setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
-					date_default_timezone_set('America/Sao_Paulo');
-					$created = date("Y-m-d H:i:s"); 
-					?>
-
-						<input type="hidden" name="created" value=<?php echo $created;?>> 
-						<input type="hidden" name="id_usuario" value=<?php echo $rows ['user_id'];?>>
-						
-					</div>
-					<input type="submit" class="btn btn-danger" value="Enviar">
-				</form>
-
-
-
 
 				
 				<h2>Recados</h2>
@@ -121,12 +98,18 @@
 							<?php
 						}
 					}
-				?>				
+				?>	
+
 			</div>
+
 		</div>
+
+
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="js/bootstrap.min.js"></script>
 	</body>
+
 </html>
+

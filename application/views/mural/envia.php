@@ -13,7 +13,7 @@ $created = $_POST['created'];
 $usuario_id = $_POST['id_usuario'];
 
 $sql = "INSERT INTO recados (nome, email, recado, created, user_id) VALUES ";
-$sql .= "('$nome', '$email', '$recado', now() , $usuario_id)"; 
+$sql .= "('$nome', '$email', '$recado', '$created', $usuario_id)"; 
 
 if ($conn->query($sql) == TRUE) {
 	echo "Enviado!";
@@ -21,7 +21,6 @@ if ($conn->query($sql) == TRUE) {
       echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
 }
 mysqli_close($conn);
-header('Location: recados.php');
 
 
 ?>

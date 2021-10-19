@@ -69,13 +69,11 @@
 						<textarea <input type="text" name="recado" class="form-control" rows="3"></textarea>
 					 
 					 <?php //pegando horario
-					setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
-					date_default_timezone_set('America/Sao_Paulo');
-					$created = date("Y-m-d H:i:s"); 
-					?>
+					$created = date("Y-m-d H:i:s");
+					 ?>
 
-						<input type="hidden" name="created" value=<?php echo $created;?>> 
-						<input type="hidden" name="id_usuario" value=<?php echo $rows ['user_id'];?>>
+						<input type="hidden" name="created" value=<?php echo $created;?> >
+						<input type="hidden" name="id_usuario" value=<?php echo $rows ['user_id'];?> >
 						
 					</div>
 					<input type="submit" class="btn btn-danger" value="Enviar">
@@ -86,38 +84,20 @@
 
 				
 				<h2>Recados</h2>
-				<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Recado</th>
-      <th scope="col">Data de envio</th>
-    </tr>
-  </thead>
 				<?php
 					$result_recado_bd = "SELECT * FROM recados";
 					$resultado_recado_bd = mysqli_query($conn, $result_recado_bd);
-    				 $nm = 1;
 					if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
 						echo "Nenhum recado...";
 					}else{
 						while($rows = mysqli_fetch_assoc($resultado_recado_bd)){
-	
-						?>	
-
-  <tbody>
-    <tr>
-      <th scope="row"><?php echo $nm ?></th>
-      <td><?php echo $rows['nome']; ?></td>
-      <td><?php echo $rows['recado']; ?></td>
-      <td><?php echo $rows['created'];?></td>
-    </tr>
-    <?php $nm++ ; ?>
-   
-
-
-							
+							?>							
+							<div class="media">
+								<div class="media-body">
+									<h4 class="media-heading"><?php echo $rows['nome']; ?></h4>
+									<?php echo $rows['recado']; ?>
+								</div>
+							</div>
 							<?php
 						}
 					}

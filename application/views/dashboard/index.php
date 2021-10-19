@@ -14,9 +14,9 @@ $menu[$i]['icon'] = ($this->userauth->is_level(ADMINISTRATOR)) ? 'user_administr
 $menu[$i]['href'] = site_url('profile');
 
 $i++;
-$menu[$i]['text'] = '';
-$menu[$i]['icon'] = 'blank.png';
-$menu[$i]['href'] = '';
+$menu[$i]['text'] = 'Mural';
+$menu[$i]['icon'] = 'mural.png';
+$menu[$i]['href'] = 'http://localhost/reserva/mural/';
 
 
 
