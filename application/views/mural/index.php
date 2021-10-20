@@ -34,7 +34,10 @@
 		<div class="container theme-showcase" role="main">
 			<div class="page-header">
 
+<?php $output = html_escape(strlen($this->userauth->user->cdisplayname) > 1 ? $this->userauth->user->displayname : $this->userauth->user->username);
 
+echo $output . "ola" .
+ ?>
 <?php
 //"Relacionando tabelas USER e recados"
 					$banco = "SELECT * FROM recados";
@@ -52,11 +55,11 @@
 <?php //Printando nome do usuario  ?>
 				<div class="media">
 								<div class="media-body">
-									 <h class="media-heading"> Você está conectado como: </h> <strong> <?php echo $rows ['nome']; ?> </strong>
+									 <h class="media-heading"> Você está conectado como: </h> <strong> <?php echo $rows ['name']; ?> </strong>
 								</div>
 							</div>	
 
-<?php // 15/10 Note: Postar recado com o usuario logado e printar o NOME do usuario  ?>
+
 				<h1>Mural de Recados</h1>
 
 
@@ -64,7 +67,7 @@
 			<div class="form-group">
 						<label for="eaedanilo1@gmail.com">Deixe seu Recado: </label>
 						
-						<input type="hidden" name="nome" value=<?php echo $rows ['nome'];?> >
+						<input type="hidden" name="nome" value=<?php echo $rows ['firstname'];?> >
 						<input type="hidden" name="email" value=<?php echo $rows ['email'];?> >
 						<textarea <input type="text" name="recado" class="form-control" rows="3"></textarea>
 					 

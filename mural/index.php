@@ -49,6 +49,10 @@
 						$rowUser = mysqli_fetch_array($resultado_id);
 			
 				?>			
+
+				<div class="container theme-showcase" role="main">
+			<div class="page-header">
+<center><h4><a href="http://localhost/reserva/index.php/"> Voltar ao Inicio! </a></h4></center>
 <?php //Printando nome do usuario  ?>
 				<div class="media">
 								<div class="media-body">
@@ -58,7 +62,6 @@
 
 <?php // 15/10 Note: Postar recado com o usuario logado e printar o NOME do usuario  ?>
 				<h1>Mural de Recados</h1>
-
 
 <form method="post" action="envia.php">
 			<div class="form-group">
@@ -80,9 +83,6 @@
 					</div>
 					<input type="submit" class="btn btn-danger" value="Enviar">
 				</form>
-
-
-
 
 				
 				<h2>Recados</h2>

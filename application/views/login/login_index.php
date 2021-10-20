@@ -88,9 +88,3 @@ echo form_close();
 					}
 				?>				
 </head>
-<body>
-
-
-
-</body>
-</html>
