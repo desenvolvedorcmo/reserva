@@ -13,13 +13,6 @@ $menu[$i]['text'] = 'Meu Perfil';
 $menu[$i]['icon'] = ($this->userauth->is_level(ADMINISTRATOR)) ? 'user_administrator.png' : 'user_teacher.png';
 $menu[$i]['href'] = site_url('profile');
 
-$i++;
-$menu[$i]['text'] = 'Mural';
-$menu[$i]['icon'] = 'mural.png';
-$menu[$i]['href'] = 'http://localhost/reserva/mural/';
-
-
-
 
 // Menu items for Administrators
 
