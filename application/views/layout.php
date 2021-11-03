@@ -45,7 +45,7 @@ if ($this->userauth->logged_in()) {
 
 	<?php
 	if (setting('maintenance_mode') == 1) {
-		$message = setting('maintenance_mode_message');
+		$message = setting('maintenance_mode_message'); 
 		if ( ! strlen($message)) {
 			$message = 'Estamos atualmente em modo de manutenção. Verifique novamente em breve.';
 		}
@@ -125,10 +125,18 @@ if ($this->userauth->logged_in()) {
 
 </body>
 </html>
+ <br>  
+ <br>
+ <br>
+</br>
 
 <?php // inicio Mural
 	session_start();
 	include_once('conexao.php');
+?>
+
+<?php
+if ($this->userauth->logged_in()) {
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -269,6 +277,21 @@ if ($this->userauth->logged_in()) {
 				<br /><br />
 			</div>
 			
+			<div class="nav-box">
+				<?php if( ! $this->userauth->logged_in()) { echo '<br /><br />'; } ?>
+				<?php
+				$i=0;
+				if(isset($menu)){
+					foreach( $menu as $link ){
+						echo "\n".'<a href="'.$link['href'].'" title="'.$link['title'].'">'.$link['text'].'</a>'."\n";
+						if( $i < count($menu)-1 ){ echo img('assets/images/blank.png', FALSE, 'width="16" height="16"'); }
+						$i++;
+					}
+				}
+				?><br />
+				<?php
+			}
+			?>
 
 
 			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

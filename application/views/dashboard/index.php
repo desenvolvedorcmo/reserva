@@ -9,9 +9,15 @@ $menu[$i]['icon'] = 'school_manage_bookings.png';
 $menu[$i]['href'] = site_url('bookings');
 
 $i++;
+$menu[$i]['text'] = 'Mural';
+$menu[$i]['icon'] = 'mural.png';
+$menu[$i]['href'] = site_url('mural');
+
+$i++;
 $menu[$i]['text'] = 'Meu Perfil';
 $menu[$i]['icon'] = ($this->userauth->is_level(ADMINISTRATOR)) ? 'user_administrator.png' : 'user_teacher.png';
 $menu[$i]['href'] = site_url('profile');
+
 
 
 // Menu items for Administrators
