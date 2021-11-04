@@ -317,18 +317,7 @@ if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
 				<br /><br />
 			</div>
 			
-			<div class="nav-box">
-				<?php if( ! $this->userauth->logged_in()) { echo '<br /><br />'; } ?>
-				<?php
-				$i=0;
-				if(isset($menu)){
-					foreach( $menu as $link ){
-						echo "\n".'<a href="'.$link['href'].'" title="'.$link['title'].'">'.$link['text'].'</a>'."\n";
-						if( $i < count($menu)-1 ){ echo img('assets/images/blank.png', FALSE, 'width="16" height="16"'); }
-						$i++;
-					}
-				}
-				?><br />
+			
 				<?php
 			}
 			?>
