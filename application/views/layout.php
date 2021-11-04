@@ -135,12 +135,38 @@ if ($this->userauth->logged_in()) {
 	include_once('conexao.php');
 ?>
 
-<?php
+<?php //verificando se usuario está logado
 if ($this->userauth->logged_in()) {
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
+	<head> 
+		<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: 200px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+  vertical-align: middle;
+}
+
+</style>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -213,31 +239,41 @@ if ($this->userauth->logged_in()) {
 				</form>
 
 				
-				<h2>Recados</h2>
-				<table class="table table-striped">
 
-  <table  margin="10">
+
+
+				<left><h2>Recados</h2></left>
+<?php	
+
+					$result_recado_bd = "SELECT * FROM recados";
+					$resultado_recado_bd = mysqli_query($conn, $result_recado_bd);	
+
+
+if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
+						echo "";
+					}else{
+						?>
+<table  id="customers">
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nome</th>
       <th scope="col">Recado</th>
       <th scope="col">Data de envio</th>
     </tr>
-  </table>
-				<?php
-					$result_recado_bd = "SELECT * FROM recados";
-					$resultado_recado_bd = mysqli_query($conn, $result_recado_bd);
-    				 $nm = 1;
-					if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
-						echo "Nenhum recado...";
-					}else{
-						while($rows = mysqli_fetch_assoc($resultado_recado_bd)){
-	
-						?>	
+    <?php
+   } 
+?>
+    <?php
+     $nm = 1;
 
- 
-    <table  margin="10">
-      <th scope="row"><?php echo $nm ?></th>
+		if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
+			echo "Nenhum recado...";
+		}else{
+			while($rows = mysqli_fetch_assoc($resultado_recado_bd)){
+				?>	
+
+    <table  id="customers">
+    <th  scope="row"><?php echo $nm ?></th>
       <td><?php echo $rows['nome']; ?></td>
       <td><?php echo $rows['recado']; ?></td>
       <td><?php echo $rows['created'];?></td>
@@ -247,7 +283,10 @@ if ($this->userauth->logged_in()) {
 							<?php
 						}
 					}
-				?>				
+				?>			
+
+
+
 			</div>
 		</div>
 	</body>

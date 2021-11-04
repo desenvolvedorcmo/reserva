@@ -68,23 +68,78 @@ echo form_close();
 <!DOCTYPE html>
 <html>
 <head>
-	<h2>Recados</h2>
-				<?php
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: 200px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+  vertical-align: middle;
+}
+
+}
+</style>
+	<left><h2>Recados</h2></left>
+<?php	
+
 					$result_recado_bd = "SELECT * FROM recados";
-					$resultado_recado_bd = mysqli_query($conn, $result_recado_bd);
-					if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
-						echo "Nenhum recado...";
+					$resultado_recado_bd = mysqli_query($conn, $result_recado_bd);	
+
+
+if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
+						echo "";
 					}else{
-						while($rows = mysqli_fetch_assoc($resultado_recado_bd)){
-							?>							
-							<div class="media">
-								<div class="media-body">
-									<h4 class="media-heading"><?php echo $rows['nome']; ?></h4>
-									<?php echo $rows['recado']; ?>
-								</div>
-							</div>
+						?>
+<table  id="customers">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Recado</th>
+      <th scope="col">Data de envio</th>
+    </tr>
+    <?php
+   } 
+?>
+    <?php
+     $nm = 1;
+
+		if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
+			echo "Nenhum recado...";
+		}else{
+			while($rows = mysqli_fetch_assoc($resultado_recado_bd)){
+				?>	
+
+    <table id="customers">
+    <th scope="row"><?php echo $nm ?></th>
+      <td><?php echo $rows['nome']; ?></td>
+      <td><?php echo $rows['recado']; ?></td>
+      <td><?php echo $rows['created'];?></td>
+    </table>
+    <?php $nm++ ; ?>
+   
 							<?php
 						}
 					}
-				?>				
+				?>			
+
+
+
 </head>
+
+   
