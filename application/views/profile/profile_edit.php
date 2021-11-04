@@ -145,3 +145,15 @@ $this->load->view('partials/submit', array(
 
 echo form_close();
 ?>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
