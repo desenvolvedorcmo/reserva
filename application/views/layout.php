@@ -166,6 +166,7 @@ if ($this->userauth->logged_in()) {
   vertical-align: middle;
 }
 
+
 </style>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -211,7 +212,7 @@ if ($this->userauth->logged_in()) {
 						$rowUser = mysqli_fetch_array($resultado_id);
 			
 				?>			
-
+<br id='mural'>
 				<div class="container theme-showcase" role="main">
 			<div class="page-header">
 
@@ -259,7 +260,7 @@ if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
       <th scope="col">Nome</th>
       <th scope="col">Recado</th>
       <th scope="col">Data de envio</th>
-    </tr>
+    </tr></table>
     <?php
    } 
 ?>

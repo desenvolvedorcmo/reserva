@@ -2,6 +2,7 @@
 echo $this->session->flashdata('saved');
 
 
+
 // Menu for all users
 $i = 0;
 $menu[$i]['text'] = 'Reservas';
@@ -11,7 +12,7 @@ $menu[$i]['href'] = site_url('bookings');
 $i++;
 $menu[$i]['text'] = 'Mural';
 $menu[$i]['icon'] = 'mural.png';
-$menu[$i]['href'] = site_url('mural');
+$menu[$i]['href'] = site_url('#mural');
 
 $i++;
 $menu[$i]['text'] = 'Meu Perfil';

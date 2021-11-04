@@ -106,13 +106,13 @@ if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
 						echo "";
 					}else{
 						?>
-<table  id="customers">
+<table id="customers">
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nome</th>
       <th scope="col">Recado</th>
       <th scope="col">Data de envio</th>
-    </tr>
+    </tr></table>
     <?php
    } 
 ?>
