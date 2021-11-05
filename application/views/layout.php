@@ -224,7 +224,7 @@ if ($this->userauth->logged_in()) {
 						
 						<input type="hidden" name="nome" value=<?php echo $output;?> >
 						<input type="hidden" name="email" value=<?php echo $rows ['email'];?> >
-						<textarea <input type="text" name="recado" class="form-control" rows="3"></textarea>
+						<textarea <input type="text" name="recado" class="form-control" rows="3" required="required"></textarea><span class="required"></span>
 					 
 					 <?php //pegando horario
 					setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
