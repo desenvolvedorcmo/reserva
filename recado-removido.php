@@ -78,7 +78,7 @@
 <?php //Printando nome do usuario  ?>
 				<div class="media">
 								<div class="media-body">
-									<left><p style="font-size:20px"> Olá, <strong><?php echo $rows ['nome']; ?></strong> seu recado foi <font color="#008000">enviado</font> com <strong><font color="#008000">Sucesso!</font></p></strong></left>
+									<left><p style="font-size:20px"> Olá, <strong><?php echo $rows ['nome']; ?></strong> o recado foi <font color="##ff0000">Removido</font> com <strong><font color="#008000">Sucesso!</font></p></strong></left>
 								</div>
 							</div>	
 

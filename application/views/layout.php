@@ -176,6 +176,7 @@ if ($this->userauth->logged_in()) {
     width: 450px;
     font-family: 'Verdana';
     font-size: 1.00em;
+    word-wrap: break-word;
 }
 
 </style>
@@ -251,13 +252,54 @@ if ($this->userauth->logged_in()) {
 					<input type="submit" class="btn btn-danger" value="Enviar">
 				</form>
 
-				
+
+<left><h2>Recados</h2></left>
+
+<?php // ADM RECADOS, COM REMOVER RECADO!
+if($this->userauth->is_level(ADMINISTRATOR)){
+
+					$result_recado_bd = "SELECT * FROM recados";
+					$resultado_recado_bd = mysqli_query($conn, $result_recado_bd);	
 
 
+if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
+						echo "";
+					}else{
+						?>
+<table  id="customers">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Recado</th>
+      <th scope="col">Data de Envio</th>
+      <th scope="col">Opções</th>
+    </tr></table>
+    <?php
+   } 
+     $nm = 1;
 
-				<left><h2>Recados</h2></left>
-<?php	
-
+		if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
+			echo "Nenhum recado...";
+		}else{
+			while($rows = mysqli_fetch_assoc($resultado_recado_bd)){
+				?>	
+<form method="post" action="http://localhost/reserva/remover.php/">
+	<input type="hidden" name="recado_id" value=<?php echo $rows ['id'];?>>
+    <table  id="customers">
+    <th  scope="row"><?php echo $nm ?></th>
+      <td><?php echo $rows['nome']; ?></td>
+      <td><?php echo $rows['recado']; ?></td>
+      <td><?php echo $rows['created'];?></td>
+      <td><input type="submit" class="btn btn-danger" value="Remover"></td>
+      </form>
+    </table>
+    <?php $nm++ ;
+   
+						}
+					}
+						
+				 } else if ($this->userauth->logged_in()) {
+				 	
 					$result_recado_bd = "SELECT * FROM recados";
 					$resultado_recado_bd = mysqli_query($conn, $result_recado_bd);	
 
@@ -275,8 +317,6 @@ if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
     </tr></table>
     <?php
    } 
-?>
-    <?php
      $nm = 1;
 
 		if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
@@ -291,12 +331,14 @@ if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
       <td><?php echo $rows['recado']; ?></td>
       <td><?php echo $rows['created'];?></td>
     </table>
-    <?php $nm++ ; ?>
+    <?php $nm++ ;
    
-							<?php
 						}
 					}
-				?>			
+				 }
+
+?>
+
 
 
 
