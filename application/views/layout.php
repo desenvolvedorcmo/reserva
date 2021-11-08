@@ -166,6 +166,17 @@ if ($this->userauth->logged_in()) {
   vertical-align: middle;
 }
 
+#caixa {
+    color: black;
+    background: transparent;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 5;
+    height: 150px;
+    width: 450px;
+    font-family: 'Verdana';
+    font-size: 1.00em;
+}
 
 </style>
 		<meta charset="utf-8">
@@ -224,7 +235,7 @@ if ($this->userauth->logged_in()) {
 						
 						<input type="hidden" name="nome" value=<?php echo $output;?> >
 						<input type="hidden" name="email" value=<?php echo $rows ['email'];?> >
-						<textarea <input type="text" name="recado" class="form-control" rows="3" required="required"></textarea><span class="required"></span>
+						<textarea <input id="caixa" type="text" name="recado" class="form-control" rows="3" placeholder="Deixe seu Recado Aqui!" required="required"></textarea><span class="required"></span>
 					 
 					 <?php //pegando horario
 					setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
@@ -236,6 +247,7 @@ if ($this->userauth->logged_in()) {
 						<input type="hidden" name="id_usuario" value=<?php echo $rows ['user_id'];?>>
 						
 					</div>
+					<br>
 					<input type="submit" class="btn btn-danger" value="Enviar">
 				</form>
 
@@ -259,7 +271,7 @@ if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
       <th scope="col">#</th>
       <th scope="col">Nome</th>
       <th scope="col">Recado</th>
-      <th scope="col">Data de envio</th>
+      <th scope="col">Data de Envio</th>
     </tr></table>
     <?php
    } 
