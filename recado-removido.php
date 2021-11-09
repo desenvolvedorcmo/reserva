@@ -67,7 +67,7 @@
 							<?php
 
 						$resultado_id = mysqli_query($conn, "SELECT * FROM users INNER JOIN recados ON(users.user_id=recados.user_id) WHERE users.user_id");
-						$rowUser = mysqli_fetch_array($resultado_id);
+						
 			
 				?>		
 
@@ -96,18 +96,37 @@ if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
 						echo "";
 					}else{
 						?>
-<center><table  id="customers">
+<table  id="customers">
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nome</th>
       <th scope="col">Recado</th>
-      <th scope="col">Data de envio</th>
-    </tr></table></center>
+      <th scope="col">Data de Envio</th>
+      <th scope="col">Opções</th>
+    </tr></table>
     <?php
    } 
-?>
-    <?php
      $nm = 1;
+
+		if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
+			echo "";
+		}else{
+			while($rows = mysqli_fetch_assoc($resultado_recado_bd)){
+				?>	
+<form method="post" action="http://localhost/reserva/remover.php/">
+	<input type="hidden" name="recado_id" value=<?php echo $rows ['id'];?>>
+    <table  id="customers">
+    <th  scope="row"><?php echo $nm ?></th>
+      <td><?php echo $rows['nome']; ?></td>
+      <td><?php echo $rows['recado'];?></td>
+      <td><?php echo $rows['created'];?></td>
+      <td><input type="submit" class="btn btn-danger" value="Remover"></td>
+      </form>
+    </table>
+    <?php $nm++ ;
+   
+						}
+					}
 
 		if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
 			echo "Nenhum recado...";
@@ -128,6 +147,8 @@ if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
 					}
 				?>			
 				<br>
+
+
 <center><a href="http://localhost/reserva/index.php/"> Voltar ao Inicio! </a></center>
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

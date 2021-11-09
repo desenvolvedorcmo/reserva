@@ -74,11 +74,13 @@ echo form_close();
   border-collapse: collapse;
 }
 
+
 #customers td, #customers th {
   border: 1px solid #ddd;
   padding: 8px;
-  width: 200px;
+
 }
+
 
 #customers tr:nth-child(even){background-color: #f2f2f2;}
 
@@ -87,13 +89,20 @@ echo form_close();
 #customers th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
   background-color: #04AA6D;
   color: white;
-  vertical-align: middle;
-}
+  text-align: center;
 
 }
+
+#customers tr td{
+    white-space: pre-wrap;
+}
+
+
+
+
+
 </style>
 	<left><h2>Recados</h2></left>
 <?php	
@@ -106,12 +115,15 @@ if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
 						echo "";
 					}else{
 						?>
-<table id="customers">
+<div class="card-block">
+   <div class="dt-responsive table-responsive">
+
+<table class="table table-striped table-bordered" id="customers">
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Recado</th>
-      <th scope="col">Data de envio</th>
+      <th width="10" scope="col">#</th>
+      <th width="100" scope="col">Nome</th>
+      <th height="12" width="400" scope="col">Recado</th>
+      <th width="30" scope="col">Data de envio</th>
     </tr></table>
     <?php
    } 
@@ -126,10 +138,10 @@ if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
 				?>	
 
     <table id="customers">
-    <th scope="row"><?php echo $nm ?></th>
-      <td><?php echo $rows['nome']; ?></td>
-      <td><?php echo $rows['recado']; ?></td>
-      <td><?php echo $rows['created'];?></td>
+    <th width="10" scope="row"><?php echo $nm ?></th>
+      <td width="100"><?php echo $rows['nome']; ?></td>
+      <td width="400"><?php echo $rows['recado']; ?></td>
+      <td width="30"><?php echo $rows['created'];?></td>
     </table>
     <?php $nm++ ; ?>
    

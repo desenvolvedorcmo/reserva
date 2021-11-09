@@ -245,12 +245,13 @@ if ($this->userauth->logged_in()) {
 					?>
 
 						<input type="hidden" name="created" value=<?php echo $created;?>> 
-						<input type="hidden" name="id_usuario" value=<?php echo $rows ['user_id'];?>>
+						
 						
 					</div>
 					<br>
 					<input type="submit" class="btn btn-danger" value="Enviar">
 				</form>
+ 
 
 
 <left><h2>Recados</h2></left>

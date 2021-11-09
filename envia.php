@@ -10,10 +10,9 @@ $nome = $_POST['nome'];
 $email = $_POST['email'];
 $recado = $_POST['recado'];
 $created = $_POST['created'];
-$usuario_id = $_POST['id_usuario'];
 
-$sql = "INSERT INTO recados (nome, email, recado, created, user_id) VALUES ";
-$sql .= "('$nome', '$email', '$recado', now() , $usuario_id)"; 
+$sql = "INSERT INTO recados (nome, email, recado, created) VALUES ";
+$sql .= "('$nome', '$email', '$recado', now())"; 
 
 if ($conn->query($sql) == TRUE) {
 	echo "Enviado!";

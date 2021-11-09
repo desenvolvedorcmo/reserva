@@ -67,7 +67,7 @@
 							<?php
 
 						$resultado_id = mysqli_query($conn, "SELECT * FROM users INNER JOIN recados ON(users.user_id=recados.user_id) WHERE users.user_id");
-						$rowUser = mysqli_fetch_array($resultado_id);
+						
 			
 				?>		
 
