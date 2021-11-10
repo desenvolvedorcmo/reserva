@@ -179,6 +179,10 @@ if ($this->userauth->logged_in()) {
     word-wrap: break-word;
 }
 
+#form-control[type="text"]{
+ width: 400ch;
+}
+
 </style>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -236,7 +240,7 @@ if ($this->userauth->logged_in()) {
 						
 						<input type="hidden" name="nome" value=<?php echo $output;?> >
 						<input type="hidden" name="email" value=<?php echo $rows ['email'];?> >
-						<textarea <input id="caixa" type="text" name="recado" class="form-control" rows="3" placeholder="Deixe seu Recado Aqui!" required="required"></textarea><span class="required"></span>
+						<textarea <input id="caixa" maxlength="800" type="text" name="recado" class="form-control" rows="3" placeholder="Deixe seu Recado Aqui!" required="required"></textarea><span class="required"></span>
 					 
 					 <?php //pegando horario
 					setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
@@ -248,6 +252,7 @@ if ($this->userauth->logged_in()) {
 						
 						
 					</div>
+					<span><font color="#808080">*Limite de 800 Caracteres!</font></span> <br>
 					<br>
 					<input type="submit" class="btn btn-danger" value="Enviar">
 				</form>
