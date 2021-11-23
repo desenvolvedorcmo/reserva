@@ -56,14 +56,7 @@ $this->load->view('partials/submit', array(
 echo form_close();
 ?>
 
-<?php // RECADOS
-	$servidor = "localhost";
-	$usuario = "root";
-	$senha = "123";
-	$dbname = "reserva";
-	//Criar a conexao
-	$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
-	?>		
+<?php include("conexao.php"); ?>
 
 <!DOCTYPE html>
 <html>

@@ -25,8 +25,7 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Mural de Recados</title>
+	<title>Recado Removido</title>
 <style>
 #customers {
   font-family: Arial, Helvetica, sans-serif;
@@ -76,11 +75,7 @@
 
 
 <?php //Printando nome do usuario  ?>
-				<div class="media">
-								<div class="media-body">
-									<left><p style="font-size:20px"> Olá, <strong><?php echo $rows ['nome']; ?></strong> o recado foi <font color="##ff0000">Removido</font> com <strong><font color="#008000">Sucesso!</font></p></strong></left>
-								</div>
-							</div>	
+				<script>alert("Seu Recado foi Removido com Sucesso!!!"); </script>
 
 
 

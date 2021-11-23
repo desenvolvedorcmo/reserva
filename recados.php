@@ -56,6 +56,7 @@
 </style>
 
 
+
 <?php
 //"Relacionando tabelas USER e recados"
 					$banco = "SELECT * FROM recados";
@@ -73,17 +74,7 @@
 
 
 
-
-
-<?php //Printando nome do usuario  ?>
-				<div class="media">
-								<div class="media-body">
-									<left><p style="font-size:20px"> Olá, <strong><?php echo $rows ['nome']; ?></strong> seu recado foi <font color="#008000">enviado</font> com <strong><font color="#008000">Sucesso!</font></p></strong></left>
-								</div>
-							</div>	
-
-
-
+<script>alert("Seu Recado foi Enviado com Sucesso!!!"); </script>
 
 	<center><h2>Recados</h2></center>
 <?php	

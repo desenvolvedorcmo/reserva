@@ -1,6 +1,7 @@
 <?php // inicio Mural
 	session_start();
 	include_once('controllers/Mural.php');
+	include("conexao.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
