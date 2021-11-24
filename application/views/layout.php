@@ -272,14 +272,17 @@ if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
 						echo "";
 					}else{
 						?>
-<table  id="customers">
+<table class="table table-striped" id="customers">
+    <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nome</th>
       <th scope="col">Recado</th>
       <th scope="col">Data de Envio</th>
       <th scope="col">Opções</th>
-    </tr></table>
+    </tr>
+    </thead>
+</table>
     <?php
    } 
      $nm = 1;
@@ -291,8 +294,8 @@ if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
 				?>	
 <form method="post" action="http://localhost/reserva/remover.php/">
 	<input type="hidden" name="recado_id" value=<?php echo $rows ['id'];?>>
-    <table  id="customers">
-    <th  scope="row"><?php echo $nm ?></th>
+    <table class="table table-striped" id="customers">
+    <td  scope="row"><?php echo $nm ?></td>
       <td><?php echo $rows['nome']; ?></td>
       <td><?php echo $rows['recado']; ?></td>
       <td><?php echo $rows['created'];?></td>

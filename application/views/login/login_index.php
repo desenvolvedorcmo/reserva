@@ -92,10 +92,6 @@ echo form_close();
     white-space: pre-wrap;
 }
 
-
-
-
-
 </style>
 	<left><h2>Recados</h2></left>
 <?php	
