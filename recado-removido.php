@@ -68,13 +68,9 @@
 						$resultado_id = mysqli_query($conn, "SELECT * FROM users INNER JOIN recados ON(users.user_id=recados.user_id) WHERE users.user_id");
 						
 			
-				?>		
+				
 
-
-
-
-
-<?php //Printando nome do usuario  ?>
+ //Printando nome do usuario  ?>
 				<script>alert("Seu Recado foi Removido com Sucesso!!!"); </script>
 
 
@@ -124,7 +120,7 @@ if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
 					}
 
 		if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
-			echo "Nenhum recado...";
+			header('Location: http://localhost/reserva/recados.php');
 		}else{
 			while($rows = mysqli_fetch_assoc($resultado_recado_bd)){
 				?>	
@@ -144,7 +140,7 @@ if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
 				<br>
 
 
-<center><a href="http://localhost/reserva/index.php/"> Voltar ao Inicio! </a></center>
+
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

@@ -177,6 +177,9 @@ if ($this->userauth->logged_in()) {
     font-family: 'Verdana';
     font-size: 1.00em;
     word-wrap: break-word;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
 }
 
 #form-control[type="text"]{

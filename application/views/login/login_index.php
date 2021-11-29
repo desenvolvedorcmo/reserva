@@ -86,6 +86,7 @@ echo form_close();
   color: white;
   text-align: center;
 
+
 }
 
 #customers tr td{
@@ -104,10 +105,9 @@ if(mysqli_num_rows($resultado_recado_bd) <= 0 ){
 						echo "";
 					}else{
 						?>
-<div class="card-block">
-   <div class="dt-responsive table-responsive">
 
-<table class="table table-striped table-bordered" id="customers">
+
+<table id="customers">
     <tr>
       <th width="10" scope="col">#</th>
       <th width="100" scope="col">Nome</th>
